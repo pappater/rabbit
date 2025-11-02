@@ -280,8 +280,8 @@ def update_gist(chapter_num, chapter_text, continuity_log, gist):
         )
     
     # Refresh gist to get updated file URLs
-    gist = gist._requester.requestJsonAndCheck("GET", gist.url)[1]
-    gist = gist.__class__(gist._requester, gist._headers, gist, completed=True)
+    g = Github(GIST_TOKEN)
+    gist = g.get_gist(GIST_ID)
     
     # Update chapters.json with all chapter mappings
     chapters_json = update_chapters_json(gist)
@@ -363,8 +363,8 @@ def ensure_first_chapter_in_gist(gist, series_bible, outline, summaries):
         )
     
     # Refresh gist to get updated file URLs
-    gist = gist._requester.requestJsonAndCheck("GET", gist.url)[1]
-    gist = gist.__class__(gist._requester, gist._headers, gist, completed=True)
+    g = Github(GIST_TOKEN)
+    gist = g.get_gist(GIST_ID)
     
     # Create initial chapters.json
     chapters_json = update_chapters_json(gist)
