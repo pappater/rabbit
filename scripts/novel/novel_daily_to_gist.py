@@ -57,44 +57,52 @@ def get_chapter_number():
 
 def generate_chapter(chapter_num, series_bible, outline, previous_summary):
     """Generate a new chapter using Gemini AI."""
-    genai.configure(api_key=GEMINI_API_KEY)
-    model = genai.GenerativeModel('gemini-pro')
-    
-    # Load chapter prompt template
-    chapter_prompt_template = load_file(PROMPTS_DIR / "chapter_prompt.txt")
-    
-    # Build the prompt
-    prompt = chapter_prompt_template.format(
-        chapter_num=chapter_num,
-        theme=THEME,
-        series_bible=series_bible,
-        outline=outline,
-        previous_summary=previous_summary or "This is the first chapter."
-    )
-    
-    print(f"Generating Chapter {chapter_num}...")
-    response = model.generate_content(prompt)
-    
-    return response.text
+    try:
+        genai.configure(api_key=GEMINI_API_KEY)
+        model = genai.GenerativeModel('gemini-1.5-flash')
+        
+        # Load chapter prompt template
+        chapter_prompt_template = load_file(PROMPTS_DIR / "chapter_prompt.txt")
+        
+        # Build the prompt
+        prompt = chapter_prompt_template.format(
+            chapter_num=chapter_num,
+            theme=THEME,
+            series_bible=series_bible,
+            outline=outline,
+            previous_summary=previous_summary or "This is the first chapter."
+        )
+        
+        print(f"Generating Chapter {chapter_num}...")
+        response = model.generate_content(prompt)
+        
+        return response.text
+    except Exception as e:
+        print(f"ERROR: Failed to generate chapter: {e}")
+        sys.exit(1)
 
 
 def generate_summary(chapter_text, chapter_num):
     """Generate a summary of the chapter for continuity."""
-    genai.configure(api_key=GEMINI_API_KEY)
-    model = genai.GenerativeModel('gemini-pro')
-    
-    # Load summary prompt template
-    summary_prompt_template = load_file(PROMPTS_DIR / "summary_prompt.txt")
-    
-    prompt = summary_prompt_template.format(
-        chapter_num=chapter_num,
-        chapter_text=chapter_text
-    )
-    
-    print(f"Generating summary for Chapter {chapter_num}...")
-    response = model.generate_content(prompt)
-    
-    return response.text
+    try:
+        genai.configure(api_key=GEMINI_API_KEY)
+        model = genai.GenerativeModel('gemini-1.5-flash')
+        
+        # Load summary prompt template
+        summary_prompt_template = load_file(PROMPTS_DIR / "summary_prompt.txt")
+        
+        prompt = summary_prompt_template.format(
+            chapter_num=chapter_num,
+            chapter_text=chapter_text
+        )
+        
+        print(f"Generating summary for Chapter {chapter_num}...")
+        response = model.generate_content(prompt)
+        
+        return response.text
+    except Exception as e:
+        print(f"ERROR: Failed to generate summary: {e}")
+        sys.exit(1)
 
 
 def update_continuity_log(chapter_num, summary):
