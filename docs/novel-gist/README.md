@@ -32,7 +32,8 @@ docs/novel-gist/
 ├── series_bible.md        # Character descriptions, setting, themes
 ├── outline.md             # Story structure and planned chapters
 ├── summaries.md           # Chapter-by-chapter summaries
-└── continuity_log.txt     # Timestamped log of chapter generation
+├── continuity_log.txt     # Timestamped log of chapter generation
+└── chapters.json          # Chapter mapping with Gist URLs for UI display
 
 scripts/novel/
 ├── novel_daily_to_gist.py # Main script
@@ -99,6 +100,7 @@ scripts/novel/
      - `outline.md` (story structure)
      - `summaries.md` (updated with chapter 1 summary)
      - `continuity_log.txt` (updated with chapter 1 entry)
+     - `chapters.json` (chapter index with URLs for UI integration)
 
 ### Ongoing Use
 
@@ -164,7 +166,30 @@ Also update the series bible and prompts to reflect the new theme.
 ### Continuity Issues
 - The system maintains continuity through summaries and the continuity log
 - If you need to regenerate a chapter, you may need to manually update the summaries file
-- The chapter number is determined by counting entries in `continuity_log.txt`
+- The chapter number is determined by checking what chapter files exist in the Gist
+- If you delete all gist files, the next run will generate Chapter 1
+
+### Using chapters.json for UI Integration
+- The `chapters.json` file is automatically generated and updated with each chapter
+- It contains a complete index of all chapters with their Gist URLs
+- Perfect for displaying a table of contents in a UI
+- Structure:
+  ```json
+  {
+    "novel_title": "The Weight of Promises",
+    "total_chapters": 3,
+    "last_updated": "2025-11-02 21:56:30 UTC",
+    "gist_id": "your-gist-id",
+    "chapters": [
+      {
+        "chapter": 1,
+        "filename": "chapter_001.md",
+        "url": "https://gist.githubusercontent.com/.../chapter_001.md",
+        "gist_url": "https://gist.github.com/your-gist-id#chapter_001.md"
+      }
+    ]
+  }
+  ```
 
 ## API Costs
 
