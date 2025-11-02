@@ -1,0 +1,48 @@
+name: Daily Gemini Novel Chapter to Gist
+
+on:
+  # Run daily at 10:00 UTC
+  schedule:
+    - cron: '0 10 * * *'
+  
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  generate-chapter:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/novel/requirements.txt
+      
+      - name: Generate and publish chapter
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+          GIST_ID: ${{ secrets.GIST_ID }}
+        run: |
+          python scripts/novel/novel_daily_to_gist.py
+      
+      - name: Commit updated files
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add docs/novel-gist/summaries.md docs/novel-gist/continuity_log.txt
+          git diff --staged --quiet || git commit -m "Update novel files after Chapter generation"
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
