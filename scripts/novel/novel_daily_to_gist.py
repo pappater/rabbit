@@ -20,7 +20,13 @@ GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
 GIST_TOKEN = os.environ.get("GIST_TOKEN")
 GIST_ID = os.environ.get("GIST_ID")
-TOTAL_CHAPTERS = int(os.environ.get("TOTAL_CHAPTERS", "16"))  # Default to 16 chapters as per outline
+
+# Parse TOTAL_CHAPTERS with error handling
+try:
+    TOTAL_CHAPTERS = int(os.environ.get("TOTAL_CHAPTERS", "16"))
+except ValueError:
+    print(f"ERROR: TOTAL_CHAPTERS must be a valid integer, got: {os.environ.get('TOTAL_CHAPTERS')}")
+    sys.exit(1)
 
 DOCS_DIR = Path(__file__).parent.parent.parent / "docs" / "novel-gist"
 PROMPTS_DIR = Path(__file__).parent / "prompts"
@@ -308,6 +314,13 @@ def update_gist(chapter_num, chapter_text, continuity_log, gist, is_last_chapter
     print(f"  View at: https://gist.github.com/{GIST_ID}")
 
 
+def mark_novel_complete():
+    """Create the completion marker file and display completion message."""
+    COMPLETION_MARKER.touch()
+    print("  Creating completion marker...")
+    print("  The novel is now complete. Cron job will stop generating new chapters.")
+
+
 def ensure_first_chapter_in_gist(gist, series_bible, outline, summaries):
     """
     Check if Chapter 1 exists in the Gist. If not, generate and publish it.
@@ -452,9 +465,7 @@ def main():
     # Check if we've already reached the total chapters limit
     if chapter_num > TOTAL_CHAPTERS:
         print(f"\n✓ All {TOTAL_CHAPTERS} chapters have been generated!")
-        print("  Creating completion marker...")
-        COMPLETION_MARKER.touch()
-        print("  The novel is now complete. Cron job will stop generating new chapters.")
+        mark_novel_complete()
         print("\n" + "=" * 60)
         print("✓ Novel generation complete!")
         print("=" * 60)
@@ -487,9 +498,7 @@ def main():
     print("\n" + "=" * 60)
     if is_last_chapter:
         print("✓ FINAL chapter generation complete!")
-        print("  Creating completion marker...")
-        COMPLETION_MARKER.touch()
-        print("  The novel is now complete. Cron job will stop generating new chapters.")
+        mark_novel_complete()
     else:
         print("✓ Daily chapter generation complete!")
         print(f"  {TOTAL_CHAPTERS - chapter_num} chapters remaining")
