@@ -73,3 +73,11 @@ Dmitri Ivanovich, grappling with the weight of his father’s sins, reluctantly 
 The crucial revelation comes when Krasny states Dmitri's father, six months before his death, verbally pledged a vital parcel of land—the tract beyond the Volkov estate's oak grove—to Krasny as full repayment for all accumulated debts. Dmitri's father had framed this as a final act of responsibility and "atonement." This shatters Dmitri’s perception of his father’s noble spiritual quest, revealing it as a desperate, self-serving bargain to clear his own conscience at the expense of his family’s remaining inheritance.
 
 Dmitri leaves Krasny’s mansion feeling profound betrayal and entrapment. His mission of moral atonement has transformed into a tangible struggle for survival against Krasny's manipulative self-interest. The chapter concludes with Dmitri overwhelmed by the crushing weight of his inherited burden, realizing he is now alone in a battle to protect the very foundation of his family’s future: their land.
+
+## Chapter 4
+
+Dmitri returns from Krasny’s house, profoundly shaken by the revelation that his deceased father, Ivan Ilyich, not only accumulated significant "moral debts" through deceit and exploitation but also secretly promised a vital parcel of their ancestral land to Krasny as a final "atonement." Grappling with his father’s complex legacy, Dmitri faces the agonizing task of revealing this truth to his innocent sister, Katya.
+
+He confesses their father's "hubris, carelessness, and lack of scruple," and the "sacred obligation" to atone. Katya's idealized image of their father shatters as she learns of his betrayal, initially reacting with shock, denial, and then fierce anger, particularly regarding the bartered land. She views the land deal as theft, not atonement, as her world view crumbles.
+
+After a period of grief, Katya undergoes a profound transformation. Shedding her childhood innocence, she declares her unwavering resolve to share the burden. She tells Dmitri, "It is not your burden alone, brother. It is ours," pledging to help him understand their father's wrongs and face their difficult legacy together. This powerful decision, solidified by a silent pact, marks the true beginning of their joint mission, setting them on an arduous path to confront inherited shame and the immediate threat to their home.
