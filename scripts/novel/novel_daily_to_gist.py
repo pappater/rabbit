@@ -20,9 +20,11 @@ GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
 GIST_TOKEN = os.environ.get("GIST_TOKEN")
 GIST_ID = os.environ.get("GIST_ID")
+TOTAL_CHAPTERS = int(os.environ.get("TOTAL_CHAPTERS", "16"))  # Default to 16 chapters as per outline
 
 DOCS_DIR = Path(__file__).parent.parent.parent / "docs" / "novel-gist"
 PROMPTS_DIR = Path(__file__).parent / "prompts"
+COMPLETION_MARKER = DOCS_DIR / ".novel_complete"
 
 # Theme for the novel
 THEME = "Debt, mercy, and the burden of promises"
@@ -225,7 +227,7 @@ def update_chapters_json(gist):
     return json.dumps(chapters_data, indent=2)
 
 
-def update_gist(chapter_num, chapter_text, continuity_log, gist):
+def update_gist(chapter_num, chapter_text, continuity_log, gist, is_last_chapter=False):
     """
     Update the GitHub Gist with new chapter, continuity log, and chapters.json.
     
@@ -234,6 +236,7 @@ def update_gist(chapter_num, chapter_text, continuity_log, gist):
         chapter_text: Chapter content
         continuity_log: Updated continuity log content
         gist: PyGithub Gist object (reused to avoid extra API calls)
+        is_last_chapter: Whether this is the last chapter of the novel
     """
     # Prepare files for the gist
     # PyGithub expects: filename -> string content (not nested dicts)
@@ -242,6 +245,11 @@ def update_gist(chapter_num, chapter_text, continuity_log, gist):
     # Add the new chapter
     chapter_filename = f"chapter_{chapter_num:03d}.md"
     chapter_content = f"# Chapter {chapter_num}\n\n{chapter_text}"
+    
+    # If this is the last chapter, append "THE END"
+    if is_last_chapter:
+        chapter_content += "\n\n---\n\n**THE END**"
+    
     files[chapter_filename] = chapter_content
     
     # Update continuity log
@@ -387,6 +395,15 @@ def ensure_first_chapter_in_gist(gist, series_bible, outline, summaries):
 
 def main():
     """Main execution flow."""
+    # Check if novel is already complete
+    if COMPLETION_MARKER.exists():
+        print("=" * 60)
+        print("✓ Novel generation complete!")
+        print(f"  All {TOTAL_CHAPTERS} chapters have been generated.")
+        print("  The cron job will not generate any more chapters.")
+        print("=" * 60)
+        return
+    
     # Validate environment variables
     if not GEMINI_API_KEY:
         print("ERROR: GEMINI_API_KEY environment variable not set")
@@ -402,6 +419,7 @@ def main():
     
     print("=" * 60)
     print("Daily Gemini Novel Generator")
+    print(f"Total planned chapters: {TOTAL_CHAPTERS}")
     print("=" * 60)
     
     # Load canon files
@@ -430,8 +448,24 @@ def main():
     
     # Determine chapter number by checking what's already in the Gist
     chapter_num = get_chapter_number(gist)
-    print(f"\nGenerating Chapter {chapter_num}")
+    
+    # Check if we've already reached the total chapters limit
+    if chapter_num > TOTAL_CHAPTERS:
+        print(f"\n✓ All {TOTAL_CHAPTERS} chapters have been generated!")
+        print("  Creating completion marker...")
+        COMPLETION_MARKER.touch()
+        print("  The novel is now complete. Cron job will stop generating new chapters.")
+        print("\n" + "=" * 60)
+        print("✓ Novel generation complete!")
+        print("=" * 60)
+        return
+    
+    is_last_chapter = (chapter_num == TOTAL_CHAPTERS)
+    
+    print(f"\nGenerating Chapter {chapter_num} of {TOTAL_CHAPTERS}")
     print(f"Theme: {THEME}")
+    if is_last_chapter:
+        print("⚠ This is the LAST CHAPTER - will append 'THE END'")
     
     # Generate the chapter
     chapter_text = generate_chapter(chapter_num, series_bible, outline, summaries)
@@ -448,10 +482,17 @@ def main():
     save_file(DOCS_DIR / "summaries.md", summaries_content)
     
     # Update Gist with new chapter and chapters.json
-    update_gist(chapter_num, chapter_text, continuity_log, gist)
+    update_gist(chapter_num, chapter_text, continuity_log, gist, is_last_chapter)
     
     print("\n" + "=" * 60)
-    print("✓ Daily chapter generation complete!")
+    if is_last_chapter:
+        print("✓ FINAL chapter generation complete!")
+        print("  Creating completion marker...")
+        COMPLETION_MARKER.touch()
+        print("  The novel is now complete. Cron job will stop generating new chapters.")
+    else:
+        print("✓ Daily chapter generation complete!")
+        print(f"  {TOTAL_CHAPTERS - chapter_num} chapters remaining")
     print("=" * 60)
 
 
