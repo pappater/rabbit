@@ -3,7 +3,8 @@
   const chapterListItems = document.getElementById('chapter-list-items');
   const chapterContentBody = document.getElementById('chapter-content-body');
   const chapterContentTitle = document.getElementById('chapter-content-title');
-  const backButton = document.getElementById('back-button');
+  const chapterList = document.getElementById('chapter-list');
+  const hamburgerMenu = document.getElementById('hamburger-menu');
 
   let chaptersData = null;
   let currentChapter = 1;
@@ -29,6 +30,10 @@
       
       li.addEventListener('click', () => {
         loadChapter(chapter.chapter);
+        // Close menu on mobile after selection
+        if (window.innerWidth <= 768) {
+          chapterList.classList.remove('open');
+        }
       });
       
       chapterListItems.appendChild(li);
@@ -106,9 +111,21 @@
     }
   }
 
-  // Back button handler
-  backButton.addEventListener('click', () => {
-    window.location.href = 'index.html';
+  // Hamburger menu handler
+  if (hamburgerMenu) {
+    hamburgerMenu.addEventListener('click', () => {
+      chapterList.classList.toggle('open');
+    });
+  }
+
+  // Close menu when clicking outside on mobile
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768 && 
+        chapterList.classList.contains('open') &&
+        !chapterList.contains(e.target) && 
+        !hamburgerMenu.contains(e.target)) {
+      chapterList.classList.remove('open');
+    }
   });
 
   // Initialize the reader

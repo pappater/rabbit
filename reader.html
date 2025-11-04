@@ -25,19 +25,28 @@
 <body>
   <!-- Floating Header -->
   <div class="floating-header">
-    <a href="index.html" class="floating-title">rabbit</a>
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-      <span class="theme-icon">◐</span>
-    </button>
+    <div class="floating-header-left">
+      <a href="index.html" class="back-icon" aria-label="Back to Home">←</a>
+      <span class="floating-title">rabbit</span>
+    </div>
+    <div class="floating-header-right">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">◐</span>
+      </button>
+      <button id="hamburger-menu" class="hamburger-menu" aria-label="Toggle chapter list">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
   </div>
 
   <!-- Reader Layout -->
   <div class="reader-layout">
     <!-- Chapter List Sidebar -->
-    <aside class="chapter-list">
+    <aside class="chapter-list" id="chapter-list">
       <div class="chapter-list-header">
         <h2 class="chapter-list-title">Chapters</h2>
-        <button id="back-button" class="back-button">← Back to Home</button>
       </div>
       <ul id="chapter-list-items" class="chapter-list-items"></ul>
     </aside>
