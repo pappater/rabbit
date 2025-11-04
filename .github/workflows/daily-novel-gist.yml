@@ -42,10 +42,17 @@ jobs:
         env:
           GIST_ID: ${{ secrets.GIST_ID }}
         run: |
-          # Check if gist ID is empty in config.js for weight_of_promises
-          if grep -A 5 "weight_of_promises" config.js | grep -q "id: ''"; then
+          # Check if gist ID is empty in config.js for weight_of_promises section only
+          if awk '/weight_of_promises/,/^    \}/' config.js | grep -q "id: ''"; then
             echo "Updating config.js with GIST_ID for weight_of_promises"
-            sed -i "/weight_of_promises/,/id: ''/ s/id: ''/id: '$GIST_ID'/" config.js
+            awk -v gist_id="$GIST_ID" '
+              /weight_of_promises/,/^    \}/ {
+                if (/id: '\'''\''/) {
+                  sub(/id: '\'''\''/, "id: '\''" gist_id "'\''")
+                }
+              }
+              {print}
+            ' config.js > config.js.tmp && mv config.js.tmp config.js
           else
             echo "Gist ID already set in config.js for weight_of_promises"
           fi

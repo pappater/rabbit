@@ -42,10 +42,17 @@ jobs:
         env:
           STRANGER_GIST_ID: ${{ secrets.STRANGER_GIST_ID }}
         run: |
-          # Check if gist ID is empty in config.js for indifferent_shore
-          if grep -A 5 "indifferent_shore" config.js | grep -q "id: ''"; then
+          # Check if gist ID is empty in config.js for indifferent_shore section only
+          if awk '/indifferent_shore/,/^    \}/' config.js | grep -q "id: ''"; then
             echo "Updating config.js with STRANGER_GIST_ID for indifferent_shore"
-            sed -i "/indifferent_shore/,/id: ''/ s/id: ''/id: '$STRANGER_GIST_ID'/" config.js
+            awk -v gist_id="$STRANGER_GIST_ID" '
+              /indifferent_shore/,/^    \}/ {
+                if (/id: '\'''\''/) {
+                  sub(/id: '\'''\''/, "id: '\''" gist_id "'\''")
+                }
+              }
+              {print}
+            ' config.js > config.js.tmp && mv config.js.tmp config.js
           else
             echo "Gist ID already set in config.js for indifferent_shore"
           fi
