@@ -5,6 +5,7 @@
   overflow-y: auto;
   width: 280px;
   flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
 .chapter-list-header {
@@ -57,19 +58,4 @@
   color: var(--text-color);
 }
 
-.back-button {
-  background-color: var(--primary-color);
-  color: var(--bg-color);
-  border-radius: 6px;
-  padding: var(--spacing-sm) var(--spacing-md);
-  font-size: 0.9rem;
-  margin-top: var(--spacing-md);
-  width: 100%;
-  text-align: center;
-  border: 1px solid var(--primary-color);
-  transition: all 0.2s ease;
-}
 
-.back-button:hover {
-  opacity: 0.85;
-}
