@@ -38,10 +38,30 @@ jobs:
         run: |
           python scripts/novel/novel_daily_to_gist.py
       
+      - name: Update config.js with gist ID if missing
+        env:
+          GIST_ID: ${{ secrets.GIST_ID }}
+        run: |
+          # Check if gist ID is empty in config.js for weight_of_promises section only
+          EMPTY_PATTERN="id: ''"
+          if awk "/weight_of_promises/,/^    \}/" config.js | grep -q "$EMPTY_PATTERN"; then
+            echo "Updating config.js with GIST_ID for weight_of_promises"
+            awk -v gist_id="$GIST_ID" -v pattern="$EMPTY_PATTERN" '
+              /weight_of_promises/,/^    \}/ {
+                if ($0 ~ pattern) {
+                  sub(pattern, "id: '\''" gist_id "'\''")
+                }
+              }
+              {print}
+            ' config.js > config.js.tmp && mv config.js.tmp config.js
+          else
+            echo "Gist ID already set in config.js for weight_of_promises"
+          fi
+      
       - name: Commit and push updated files
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add docs/novel-gist/summaries.md docs/novel-gist/continuity_log.txt docs/novel-gist/chapters.json
+          git add docs/novel-gist/summaries.md docs/novel-gist/continuity_log.txt docs/novel-gist/chapters.json config.js
           git diff --staged --quiet || git commit -m "Update novel files after Chapter generation"
           git push

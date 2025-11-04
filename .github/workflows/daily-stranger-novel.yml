@@ -38,10 +38,30 @@ jobs:
         run: |
           python scripts/stranger-novel/stranger_novel_daily_to_gist.py
       
+      - name: Update config.js with gist ID if missing
+        env:
+          STRANGER_GIST_ID: ${{ secrets.STRANGER_GIST_ID }}
+        run: |
+          # Check if gist ID is empty in config.js for indifferent_shore section only
+          EMPTY_PATTERN="id: ''"
+          if awk "/indifferent_shore/,/^    \}/" config.js | grep -q "$EMPTY_PATTERN"; then
+            echo "Updating config.js with STRANGER_GIST_ID for indifferent_shore"
+            awk -v gist_id="$STRANGER_GIST_ID" -v pattern="$EMPTY_PATTERN" '
+              /indifferent_shore/,/^    \}/ {
+                if ($0 ~ pattern) {
+                  sub(pattern, "id: '\''" gist_id "'\''")
+                }
+              }
+              {print}
+            ' config.js > config.js.tmp && mv config.js.tmp config.js
+          else
+            echo "Gist ID already set in config.js for indifferent_shore"
+          fi
+      
       - name: Commit and push updated files
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add docs/stranger-novel/summaries.md docs/stranger-novel/continuity_log.txt docs/stranger-novel/chapters.json
+          git add docs/stranger-novel/summaries.md docs/stranger-novel/continuity_log.txt docs/stranger-novel/chapters.json config.js
           git diff --staged --quiet || git commit -m "Update stranger novel files after Chapter generation"
           git push
