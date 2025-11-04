@@ -33,13 +33,15 @@ const ThemeManager = (() => {
 
   /**
    * Initialize theme on page load
+   * Called immediately to prevent FOUC (Flash of Unstyled Content)
+   * by setting the theme attribute before the page renders
    */
   function init() {
     const theme = getCurrentTheme();
     setTheme(theme);
   }
 
-  // Initialize immediately to prevent flash
+  // Initialize immediately (before DOMContentLoaded) to prevent flash of wrong theme
   init();
 
   // Public API

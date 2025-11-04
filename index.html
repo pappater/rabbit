@@ -67,8 +67,13 @@
   <script src="scripts/home.js"></script>
   <script>
     // Theme toggle handler
-    document.getElementById('theme-toggle').addEventListener('click', () => {
-      ThemeManager.toggleTheme();
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          ThemeManager.toggleTheme();
+        });
+      }
     });
   </script>
 </body>
