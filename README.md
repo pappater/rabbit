@@ -28,7 +28,8 @@ A Camus-inspired existentialist novel exploring themes of absurdism, alienation,
 
 1. Visit the [deployed site](#) or run locally:
    ```bash
-   python3 -m http.server 8000
+   npm install
+   npm run dev
    ```
 
 2. Browse available novels on the home page
@@ -48,28 +49,62 @@ For detailed setup instructions, see:
 rabbit/
 ├── .github/workflows/          # GitHub Actions workflows
 │   ├── daily-novel-gist.yml   # The Weight of Promises
-│   └── daily-stranger-novel.yml # The Indifferent Shore
-├── components/                 # UI components
-├── docs/
-│   ├── novel-gist/            # The Weight of Promises files
-│   └── stranger-novel/        # The Indifferent Shore files
-├── scripts/
+│   ├── daily-stranger-novel.yml # The Indifferent Shore
+│   └── deploy.yml             # Deploy React app to GitHub Pages
+├── docs/                       # Novel content files
+│   ├── novel-gist/            # The Weight of Promises
+│   └── stranger-novel/        # The Indifferent Shore
+├── public/                     # Static assets (copied to dist)
+│   └── docs/                  # Novel content (symlinked)
+├── scripts/                    # Backend scripts
 │   ├── novel/                 # Weight of Promises generation
-│   ├── stranger-novel/        # Indifferent Shore generation
-│   └── api.js, home.js, reader.js, theme.js
-├── styles/                    # CSS files
-├── config.js                  # Configuration
-├── index.html                 # Home page
-├── reader.html                # Reader page
+│   └── stranger-novel/        # Indifferent Shore generation
+├── src/                        # React source code
+│   ├── components/            # Reusable React components
+│   ├── pages/                 # Page components (Home, Reader)
+│   ├── services/              # API service
+│   ├── hooks/                 # Custom hooks (useTheme)
+│   └── test/                  # Test setup
+├── index.html                  # Vite entry point
+├── vite.config.js             # Vite configuration
+├── package.json               # Node.js dependencies
 └── README.md                  # This file
 ```
 
 ## Technology
 
-- **Frontend**: Vanilla JavaScript, HTML, CSS
+- **Frontend**: React 19, React Router, Vite 7
+- **Testing**: Vitest, React Testing Library
 - **AI**: Google Gemini AI (gemini-2.5-flash)
 - **Storage**: GitHub Gists
 - **Automation**: GitHub Actions
+
+## Development
+
+### Prerequisites
+- Node.js 20 or higher
+- npm
+
+### Commands
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Run tests
+npm test
+
+# Run linter
+npm run lint
+```
 
 ## Contributing
 
