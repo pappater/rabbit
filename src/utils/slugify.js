@@ -12,8 +12,8 @@ export function slugify(text) {
     .replace(/\s+/g, '_')           // Replace spaces with _
     .replace(/[^\w-]+/g, '')        // Remove all non-word chars
     .replace(/__+/g, '_')           // Replace multiple _ with single _
-    .replace(/^-+/, '')             // Trim _ from start of text
-    .replace(/-+$/, '');            // Trim _ from end of text
+    .replace(/^_+/, '')             // Trim _ from start of text
+    .replace(/_+$/, '');            // Trim _ from end of text
 }
 
 /**
