@@ -54,6 +54,7 @@ A collection of short stories, each written in the distinctive style of a random
 For detailed setup instructions, see:
 - [SETUP_STRANGER_NOVEL.md](SETUP_STRANGER_NOVEL.md) - Setup for "The Indifferent Shore"
 - [SETUP_WEREWOLF_NOVEL.md](SETUP_WEREWOLF_NOVEL.md) - Setup for "Moonbound Devotion"
+- [SETUP_FLYING_BANANA.md](SETUP_FLYING_BANANA.md) - Setup for "Flying Banana"
 - [docs/flying-banana/README.md](docs/flying-banana/README.md) - Documentation for "Flying Banana"
 - [ENVIRONMENT_VARIABLES.md](ENVIRONMENT_VARIABLES.md) - Environment variables reference
 - [docs/novel-gist/README.md](docs/novel-gist/README.md) - Original novel documentation
