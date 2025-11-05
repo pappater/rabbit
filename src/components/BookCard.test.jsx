@@ -55,4 +55,22 @@ describe('BookCard', () => {
     );
     expect(screen.getByText(/Last updated:/)).toBeInTheDocument();
   });
+
+  it('displays short stories count for short story collections', () => {
+    render(
+      <BrowserRouter>
+        <BookCard {...defaultProps} chapters={3} isShortStories={true} />
+      </BrowserRouter>
+    );
+    expect(screen.getByText('3 Short Stories Available')).toBeInTheDocument();
+  });
+
+  it('displays single short story text correctly', () => {
+    render(
+      <BrowserRouter>
+        <BookCard {...defaultProps} chapters={1} isShortStories={true} />
+      </BrowserRouter>
+    );
+    expect(screen.getByText('1 Short Story Available')).toBeInTheDocument();
+  });
 });
