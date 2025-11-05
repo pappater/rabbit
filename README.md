@@ -106,6 +106,41 @@ npm test
 npm run lint
 ```
 
+### Marking a Book as Complete
+
+When a novel reaches its final chapter and is complete:
+
+1. **Update chapters.json**: Set the `completed` field to `true` in both locations:
+   - `docs/[novel-folder]/chapters.json`
+   - `public/docs/[novel-folder]/chapters.json`
+   
+   Example:
+   ```json
+   {
+     "novel_title": "The Weight of Promises",
+     "total_chapters": 16,
+     "completed": true,
+     ...
+   }
+   ```
+
+2. **Disable the Cron Job**: Update the corresponding workflow file in `.github/workflows/`:
+   - For "The Weight of Promises": `.github/workflows/daily-novel-gist.yml`
+   - For "The Indifferent Shore": `.github/workflows/daily-stranger-novel.yml`
+   
+   Comment out or remove the `schedule` section:
+   ```yaml
+   on:
+     # schedule:
+     #   - cron: '0 10 * * *'
+     workflow_dispatch:  # Keep manual trigger for debugging
+   ```
+
+3. **Effects of Completion**:
+   - A "— The End —" indicator will appear at the end of the final chapter
+   - No more chapters will be generated automatically
+   - The manual workflow trigger remains available for maintenance
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit pull requests or open issues.
