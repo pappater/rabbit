@@ -39,7 +39,7 @@ export const CONFIG = {
       title: "Hydrogen Jukebox",
       gist: {
         username: 'pappater',
-        id: ''  // Will be set via HYDROGEN_JUKEBOX_GIST_ID secret by GitHub Actions workflow
+        id: 'f80e0314b03be59d97a32e27f1fce44c'  // Will be set via HYDROGEN_JUKEBOX_GIST_ID secret by GitHub Actions workflow
       },
       localPath: 'docs/hydrogen-jukebox',
       type: 'poems'  // Flag to indicate this is a poem collection
