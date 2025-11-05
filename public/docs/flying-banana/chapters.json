@@ -1,7 +1,7 @@
 {
   "novel_title": "Flying Banana",
-  "total_chapters": 3,
-  "last_updated": "2025-11-05 16:37:33 UTC",
+  "total_chapters": 4,
+  "last_updated": "2025-11-05 16:39:48 UTC",
   "gist_id": "efc9cfe56f7bc265ec0043f0ffbd533c",
   "completed": false,
   "chapters": [
@@ -28,6 +28,14 @@
       "gist_url": "https://gist.github.com/efc9cfe56f7bc265ec0043f0ffbd533c#story_003.md",
       "chapter_name": "A Treatise on the Vanishing North",
       "published_date": "2025-11-05 16:37:33 UTC"
+    },
+    {
+      "chapter": 4,
+      "filename": "story_004.md",
+      "url": "https://gist.githubusercontent.com/pappater/efc9cfe56f7bc265ec0043f0ffbd533c/raw/82c1df531a3c5fade413a5afafda6f2595d5bba3/story_004.md",
+      "gist_url": "https://gist.github.com/efc9cfe56f7bc265ec0043f0ffbd533c#story_004.md",
+      "chapter_name": "Jericho's Echo",
+      "published_date": "2025-11-05 16:39:47 UTC"
     }
   ]
 }
