@@ -43,6 +43,15 @@ const CONFIG = {
       },
       localPath: 'docs/hydrogen-jukebox',
       type: 'poems'  // Flag to indicate this is a poem collection
+    },
+    of_old_man: {
+      title: "Of Old Man",
+      gist: {
+        username: 'pappater',
+        id: ''  // Will be set via OF_OLD_MAN_GIST_ID secret by GitHub Actions workflow
+      },
+      localPath: 'docs/of-old-man',
+      type: 'poems'  // Flag to indicate this is a poem collection
     }
   },
   

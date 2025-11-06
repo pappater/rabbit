@@ -1,0 +1,95 @@
+name: Twice Daily Of Old Man Poem to Gist
+
+on:
+  # Run twice per day (10:00 UTC and 22:00 UTC)
+  schedule:
+    - cron: '0 10,22 * * *'
+  
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  generate-poem:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/of-old-man/requirements.txt
+      
+      - name: Generate and publish poem
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-2.5-flash
+          GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+          OF_OLD_MAN_GIST_ID: ${{ secrets.OF_OLD_MAN_GIST_ID }}
+        run: |
+          python scripts/of-old-man/of_old_man_daily_to_gist.py
+      
+      - name: Update config.js with gist ID if missing
+        env:
+          OF_OLD_MAN_GIST_ID: ${{ secrets.OF_OLD_MAN_GIST_ID }}
+        run: |
+          # Check if gist ID is empty in config.js for of_old_man section only
+          EMPTY_PATTERN="id: ''"
+          if awk "/of_old_man/,/^    \}/" config.js | grep -q "$EMPTY_PATTERN"; then
+            echo "Updating config.js with OF_OLD_MAN_GIST_ID for of_old_man"
+            awk -v gist_id="$OF_OLD_MAN_GIST_ID" -v pattern="$EMPTY_PATTERN" '
+              /of_old_man/,/^    \}/ {
+                if ($0 ~ pattern) {
+                  sub(pattern, "id: '\''" gist_id "'\''")
+                }
+              }
+              {print}
+            ' config.js > config.js.tmp && mv config.js.tmp config.js
+          else
+            echo "Gist ID already set in config.js for of_old_man"
+          fi
+      
+      - name: Update src/config.js with gist ID if missing
+        env:
+          OF_OLD_MAN_GIST_ID: ${{ secrets.OF_OLD_MAN_GIST_ID }}
+        run: |
+          # Check if gist ID is empty in src/config.js for of_old_man section only
+          EMPTY_PATTERN="id: ''"
+          if awk "/of_old_man/,/^    \}/" src/config.js | grep -q "$EMPTY_PATTERN"; then
+            echo "Updating src/config.js with OF_OLD_MAN_GIST_ID for of_old_man"
+            awk -v gist_id="$OF_OLD_MAN_GIST_ID" -v pattern="$EMPTY_PATTERN" '
+              /of_old_man/,/^    \}/ {
+                if ($0 ~ pattern) {
+                  sub(pattern, "id: '\''" gist_id "'\''")
+                }
+              }
+              {print}
+            ' src/config.js > src/config.js.tmp && mv src/config.js.tmp src/config.js
+          else
+            echo "Gist ID already set in src/config.js for of_old_man"
+          fi
+      
+      - name: Sync chapters.json to public folder
+        run: |
+          # Create directory if it doesn't exist
+          mkdir -p public/docs/of-old-man
+          # Copy chapters.json from docs to public for deployment
+          echo "Syncing chapters.json to public/docs/of-old-man/"
+          cp docs/of-old-man/chapters.json public/docs/of-old-man/chapters.json
+      
+      - name: Commit and push updated files
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add docs/of-old-man/chapters.json public/docs/of-old-man/chapters.json config.js src/config.js
+          git diff --staged --quiet || git commit -m "Update Of Old Man files after poem generation"
+          git push
