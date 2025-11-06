@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Daily Of Old Man Poem Generator
-Generates one poem per day using Google Gemini AI in a randomly selected
+Hourly Of Old Man Poem Generator
+Generates one poem per hour using Google Gemini AI in a randomly selected
 poetry type style, and publishes all outputs to a single public GitHub Gist.
 """
 
@@ -304,7 +304,7 @@ def main():
         sys.exit(1)
     
     print("=" * 60)
-    print("Of Old Man Daily Poem Generator")
+    print("Of Old Man Hourly Poem Generator")
     print("=" * 60)
     
     # Load configuration (for future use if needed)
