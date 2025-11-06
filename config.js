@@ -48,7 +48,7 @@ const CONFIG = {
       title: "Of Old Man",
       gist: {
         username: 'pappater',
-        id: ''  // Will be set via OF_OLD_MAN_GIST_ID secret by GitHub Actions workflow
+        id: '9fa4af8eb29c0097cc525f2d38503c2e'  // Will be set via OF_OLD_MAN_GIST_ID secret by GitHub Actions workflow
       },
       localPath: 'docs/of-old-man',
       type: 'poems'  // Flag to indicate this is a poem collection
