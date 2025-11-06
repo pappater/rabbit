@@ -1,7 +1,7 @@
 {
   "novel_title": "Flying Banana",
-  "total_chapters": 4,
-  "last_updated": "2025-11-05 16:39:48 UTC",
+  "total_chapters": 5,
+  "last_updated": "2025-11-06 13:35:52 UTC",
   "gist_id": "efc9cfe56f7bc265ec0043f0ffbd533c",
   "completed": false,
   "chapters": [
@@ -36,6 +36,14 @@
       "gist_url": "https://gist.github.com/efc9cfe56f7bc265ec0043f0ffbd533c#story_004.md",
       "chapter_name": "Jericho's Echo",
       "published_date": "2025-11-05 16:39:47 UTC"
+    },
+    {
+      "chapter": 5,
+      "filename": "story_005.md",
+      "url": "https://gist.githubusercontent.com/pappater/efc9cfe56f7bc265ec0043f0ffbd533c/raw/cfd91766b8ca28eef8951e39162458f7a0ca9772/story_005.md",
+      "gist_url": "https://gist.github.com/efc9cfe56f7bc265ec0043f0ffbd533c#story_005.md",
+      "chapter_name": "The Cartography of Salt and Longing",
+      "published_date": "2025-11-06 13:35:51 UTC"
     }
   ]
 }
