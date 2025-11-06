@@ -37,6 +37,18 @@ A collection of short stories, each written in the distinctive style of a random
 - **Length**: 5,000-7,500 words per story
 - **Generated**: Daily at 13:00 UTC
 
+### Hydrogen Jukebox
+A poetry collection featuring poems in the distinctive styles of modern classic poets.
+- **Style**: Varies by poet - emulating Yeats, Frost, Rilke, Plath, Ginsberg, and 26 other modern classic poets
+- **Poems**: Ongoing collection (never-ending series)
+- **Generated**: Daily at 14:00 UTC
+
+### Of Old Man
+A poetry collection exploring the full spectrum of poetic forms and traditions.
+- **Style**: Varies by poetry type - 91 different forms including Sonnet, Haiku, Villanelle, Ghazal, Free verse, and many more
+- **Poems**: Ongoing collection (never-ending series)
+- **Generated**: Hourly (every hour, 24 poems per day)
+
 ## Quick Start
 
 1. Visit the [deployed site](#) or run locally:
@@ -55,7 +67,9 @@ For detailed setup instructions, see:
 - [SETUP_STRANGER_NOVEL.md](SETUP_STRANGER_NOVEL.md) - Setup for "The Indifferent Shore"
 - [SETUP_WEREWOLF_NOVEL.md](SETUP_WEREWOLF_NOVEL.md) - Setup for "Moonbound Devotion"
 - [SETUP_FLYING_BANANA.md](SETUP_FLYING_BANANA.md) - Setup for "Flying Banana"
+- [SETUP_OF_OLD_MAN.md](SETUP_OF_OLD_MAN.md) - Setup for "Of Old Man"
 - [docs/flying-banana/README.md](docs/flying-banana/README.md) - Documentation for "Flying Banana"
+- [docs/of-old-man/README.md](docs/of-old-man/README.md) - Documentation for "Of Old Man"
 - [ENVIRONMENT_VARIABLES.md](ENVIRONMENT_VARIABLES.md) - Environment variables reference
 - [docs/novel-gist/README.md](docs/novel-gist/README.md) - Original novel documentation
 
@@ -68,19 +82,25 @@ rabbit/
 │   ├── daily-stranger-novel.yml # The Indifferent Shore
 │   ├── daily-werewolf-novel.yml # Moonbound Devotion
 │   ├── daily-flying-banana.yml # Flying Banana
+│   ├── daily-hydrogen-jukebox.yml # Hydrogen Jukebox
+│   ├── hourly-of-old-man.yml  # Of Old Man (hourly)
 │   └── deploy.yml             # Deploy React app to GitHub Pages
 ├── docs/                       # Novel content files
 │   ├── novel-gist/            # The Weight of Promises
 │   ├── stranger-novel/        # The Indifferent Shore
 │   ├── werewolf-novel/        # Moonbound Devotion
-│   └── flying-banana/         # Flying Banana
+│   ├── flying-banana/         # Flying Banana
+│   ├── hydrogen-jukebox/      # Hydrogen Jukebox
+│   └── of-old-man/            # Of Old Man
 ├── public/                     # Static assets (copied to dist)
 │   └── docs/                  # Novel content (symlinked)
 ├── scripts/                    # Backend scripts
 │   ├── novel/                 # Weight of Promises generation
 │   ├── stranger-novel/        # Indifferent Shore generation
 │   ├── werewolf-novel/        # Moonbound Devotion generation
-│   └── flying-banana/         # Flying Banana generation
+│   ├── flying-banana/         # Flying Banana generation
+│   ├── hydrogen-jukebox/      # Hydrogen Jukebox generation
+│   └── of-old-man/            # Of Old Man generation
 ├── src/                        # React source code
 │   ├── components/            # Reusable React components
 │   ├── pages/                 # Page components (Home, Reader)
