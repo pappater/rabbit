@@ -1,11 +1,11 @@
 # Setup Guide: Of Old Man Poetry Collection
 
-This guide covers the setup process for the "Of Old Man" poetry collection, which generates hourly poems in various poetry forms.
+This guide covers the setup process for the "Of Old Man" poetry collection, which generates poems twice daily in various poetry forms.
 
 ## Overview
 
 "Of Old Man" is a poetry collection that:
-- Generates **one poem per hour** (24 poems per day)
+- Generates **two poems per day** (at 10:00 UTC and 22:00 UTC)
 - Randomly selects from **91 different poetry types** for each poem
 - Uses Google Gemini AI for poem generation
 - Stores poems in a GitHub Gist
@@ -66,14 +66,14 @@ The configuration files should already be set up in the repository:
 - `scripts/of-old-man/config.json` - Generation configuration
 
 ### Workflow File
-- `.github/workflows/hourly-of-old-man.yml` - Runs every hour
+- `.github/workflows/hourly-of-old-man.yml` - Runs twice daily (10:00 UTC and 22:00 UTC)
 
 ## Step 4: Manual First Run (Optional)
 
-To test the setup before waiting for the hourly cron:
+To test the setup before waiting for the scheduled cron:
 
 1. Go to **Actions** tab in your repository
-2. Select **Hourly Of Old Man Poem to Gist** workflow
+2. Select **Twice Daily Of Old Man Poem to Gist** workflow
 3. Click **Run workflow** → **Run workflow**
 4. Wait for the workflow to complete
 5. Check the gist to see the first poem
@@ -116,21 +116,20 @@ See `scripts/of-old-man/poetry_types.json` for the complete list.
 ## Workflow Schedule
 
 The workflow runs:
-- **Schedule**: Every hour (cron: `0 * * * *`)
+- **Schedule**: Twice daily (cron: `0 10,22 * * *`) at 10:00 UTC and 22:00 UTC
 - **Manual**: Can be triggered via workflow_dispatch
 
 ### Expected Generation Times
-- One poem per hour
-- 24 poems per day
-- 168 poems per week
-- ~730 poems per month
+- Two poems per day
+- 14 poems per week
+- ~60 poems per month
 
 ## File Structure
 
 ```
 rabbit/
 ├── .github/workflows/
-│   └── hourly-of-old-man.yml      # Hourly workflow
+│   └── hourly-of-old-man.yml      # Twice daily workflow
 ├── docs/of-old-man/
 │   ├── README.md                   # Collection documentation
 │   └── chapters.json               # Poem index
@@ -171,7 +170,7 @@ To modify how poems are generated:
 To change the generation frequency:
 
 1. Edit `.github/workflows/hourly-of-old-man.yml`
-2. Modify the cron schedule (e.g., `0 */2 * * *` for every 2 hours)
+2. Modify the cron schedule (e.g., `0 10 * * *` for daily at 10:00 UTC, or `0 */6 * * *` for every 6 hours)
 3. Commit and push changes
 
 ## Troubleshooting

@@ -47,7 +47,7 @@ A poetry collection featuring poems in the distinctive styles of modern classic 
 A poetry collection exploring the full spectrum of poetic forms and traditions.
 - **Style**: Varies by poetry type - 91 different forms including Sonnet, Haiku, Villanelle, Ghazal, Free verse, and many more
 - **Poems**: Ongoing collection (never-ending series)
-- **Generated**: Hourly (every hour, 24 poems per day)
+- **Generated**: Twice daily at 10:00 UTC and 22:00 UTC
 
 ## Quick Start
 
@@ -83,7 +83,7 @@ rabbit/
 │   ├── daily-werewolf-novel.yml # Moonbound Devotion
 │   ├── daily-flying-banana.yml # Flying Banana
 │   ├── daily-hydrogen-jukebox.yml # Hydrogen Jukebox
-│   ├── hourly-of-old-man.yml  # Of Old Man (hourly)
+│   ├── hourly-of-old-man.yml  # Of Old Man (twice daily)
 │   └── deploy.yml             # Deploy React app to GitHub Pages
 ├── docs/                       # Novel content files
 │   ├── novel-gist/            # The Weight of Promises

@@ -1,9 +1,9 @@
-name: Hourly Of Old Man Poem to Gist
+name: Twice Daily Of Old Man Poem to Gist
 
 on:
-  # Run every hour
+  # Run twice per day (10:00 UTC and 22:00 UTC)
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 10,22 * * *'
   
   # Allow manual triggering
   workflow_dispatch:
