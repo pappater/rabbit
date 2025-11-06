@@ -1,6 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
 import './TextToSpeech.css';
 
+// Quality voice indicators for enhanced text-to-speech
+const QUALITY_VOICE_KEYWORDS = ['enhanced', 'premium', 'natural', 'neural'];
+
 export default function TextToSpeech({ text }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
@@ -41,8 +44,7 @@ export default function TextToSpeech({ text }) {
         const lang = voice.lang.toLowerCase();
         
         // Prioritize enhanced/premium/natural quality voices
-        if (name.includes('enhanced') || name.includes('premium') || 
-            name.includes('natural') || name.includes('neural')) {
+        if (QUALITY_VOICE_KEYWORDS.some(keyword => name.includes(keyword))) {
           return lang.startsWith('en');
         }
         
@@ -68,7 +70,6 @@ export default function TextToSpeech({ text }) {
       // Slightly slower rate for better clarity and podcast-like experience
       utterance.rate = 0.9;
       utterance.pitch = 1.0;
-      utterance.volume = 1.0;
       
       utterance.onend = () => {
         setIsPlaying(false);
