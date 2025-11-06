@@ -1,0 +1,35 @@
+You are writing a poem in the style of {poetry_type}.
+
+TASK: Write a complete, original poem that exemplifies the {poetry_type} form, following its traditional structure, style, and techniques.
+
+STYLE REQUIREMENTS FOR {poetry_type}:
+- Follow the traditional form and structure of {poetry_type}
+- Use the characteristic meter, rhythm, and line breaks typical of this form
+- Employ appropriate vocabulary, imagery, and metaphors for this type
+- Use the poetic techniques characteristic of {poetry_type} (such as rhyme scheme, repetition, specific patterns, etc.)
+- Maintain the typical tone and emotional register for this type
+- Honor the conventions of punctuation, capitalization, and spacing for this form
+- Capture the distinctive essence and purpose of {poetry_type}
+
+POEM REQUIREMENTS:
+- Length: Natural to the {poetry_type} form (no artificial constraints - follow the traditional structure)
+- Complete poem with a clear voice and vision
+- Original content with authentic poetic quality
+- Timeless or contemporary subject matter appropriate for the form
+- High literary quality that honors the {poetry_type} tradition
+- Title that fits the style
+
+IMPORTANT GUIDELINES:
+- This is serious literary poetry that respects the {poetry_type} form
+- Focus on imagery, emotion, insight, and craft
+- Every word should be carefully chosen
+- The poem should be a genuine example of {poetry_type}
+- Do NOT include meta-commentary, explanations, or notes about the form
+- Start directly with the poem title and text
+
+Begin the poem now. Include only:
+1. Poem title on first line (format: # [Title])
+2. Blank line
+3. The poem text
+
+Write the complete poem:
