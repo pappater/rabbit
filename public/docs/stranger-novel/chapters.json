@@ -1,23 +1,50 @@
 {
   "novel_title": "The Indifferent Shore",
-  "total_chapters": 2,
-  "last_updated": "2025-11-04 15:59:40 UTC",
+  "total_chapters": 6,
+  "last_updated": "2025-11-06 11:17:26 UTC",
   "gist_id": "b12ff3b5ea6e9f42a7becfc2cc1aeece",
-  "completed": false,
   "chapters": [
     {
       "chapter": 1,
-      "chapter_name": "The Death",
       "filename": "chapter_001.md",
       "url": "https://gist.githubusercontent.com/pappater/b12ff3b5ea6e9f42a7becfc2cc1aeece/raw/feee45b7dd7c8e48689ec6c67f3e80b52e3571f4/chapter_001.md",
-      "gist_url": "https://gist.github.com/b12ff3b5ea6e9f42a7becfc2cc1aeece#chapter_001.md"
+      "gist_url": "https://gist.github.com/b12ff3b5ea6e9f42a7becfc2cc1aeece#chapter_001.md",
+      "chapter_name": "The Death"
     },
     {
       "chapter": 2,
-      "chapter_name": "The Funeral",
       "filename": "chapter_002.md",
       "url": "https://gist.githubusercontent.com/pappater/b12ff3b5ea6e9f42a7becfc2cc1aeece/raw/7d61e294004d1dbf2a04ff4fa79d084ea35731ec/chapter_002.md",
-      "gist_url": "https://gist.github.com/b12ff3b5ea6e9f42a7becfc2cc1aeece#chapter_002.md"
+      "gist_url": "https://gist.github.com/b12ff3b5ea6e9f42a7becfc2cc1aeece#chapter_002.md",
+      "chapter_name": "The Funeral"
+    },
+    {
+      "chapter": 3,
+      "filename": "chapter_003.md",
+      "url": "https://gist.githubusercontent.com/pappater/b12ff3b5ea6e9f42a7becfc2cc1aeece/raw/ad76d2c28b1c7b972ef18fc0e6be3e1480edee70/chapter_003.md",
+      "gist_url": "https://gist.github.com/b12ff3b5ea6e9f42a7becfc2cc1aeece#chapter_003.md",
+      "chapter_name": "The Beach"
+    },
+    {
+      "chapter": 4,
+      "filename": "chapter_004.md",
+      "url": "https://gist.githubusercontent.com/pappater/b12ff3b5ea6e9f42a7becfc2cc1aeece/raw/2d5e8ff6e000e271cc3e8c6a09e11e48ba06c691/chapter_004.md",
+      "gist_url": "https://gist.github.com/b12ff3b5ea6e9f42a7becfc2cc1aeece#chapter_004.md",
+      "chapter_name": "The Office"
+    },
+    {
+      "chapter": 5,
+      "filename": "chapter_005.md",
+      "url": "https://gist.githubusercontent.com/pappater/b12ff3b5ea6e9f42a7becfc2cc1aeece/raw/d239f746108c14a2b25093351ee3206aa5ceff00/chapter_005.md",
+      "gist_url": "https://gist.github.com/b12ff3b5ea6e9f42a7becfc2cc1aeece#chapter_005.md",
+      "chapter_name": "Raymond"
+    },
+    {
+      "chapter": 6,
+      "filename": "chapter_006.md",
+      "url": "https://gist.githubusercontent.com/pappater/b12ff3b5ea6e9f42a7becfc2cc1aeece/raw/ac623ce943f1bd41b293cb27c8cafe1877f388a0/chapter_006.md",
+      "gist_url": "https://gist.github.com/b12ff3b5ea6e9f42a7becfc2cc1aeece#chapter_006.md",
+      "chapter_name": "Saturday with Nadia"
     }
   ]
 }
