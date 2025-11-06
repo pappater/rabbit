@@ -1,7 +1,7 @@
 {
   "novel_title": "Of Old Man",
-  "total_chapters": 7,
-  "last_updated": "2025-11-06 22:44:35 UTC",
+  "total_chapters": 8,
+  "last_updated": "2025-11-06 23:41:39 UTC",
   "gist_id": "9fa4af8eb29c0097cc525f2d38503c2e",
   "completed": false,
   "chapters": [
@@ -67,6 +67,15 @@
       "chapter_name": "Quiet Affirmation",
       "published_date": "2025-11-06 22:44:35 UTC",
       "poetry_type": "ABC poem"
+    },
+    {
+      "chapter": 8,
+      "filename": "poem_008.md",
+      "url": "https://gist.githubusercontent.com/pappater/9fa4af8eb29c0097cc525f2d38503c2e/raw/a11b2435fab9c9ff10cb44720e3d2f560ca0406b/poem_008.md",
+      "gist_url": "https://gist.github.com/9fa4af8eb29c0097cc525f2d38503c2e#poem_008.md",
+      "chapter_name": "Prosa of the Waning Light",
+      "published_date": "2025-11-06 23:41:38 UTC",
+      "poetry_type": "Sequence poem"
     }
   ]
 }
