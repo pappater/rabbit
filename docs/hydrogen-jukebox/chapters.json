@@ -1,7 +1,7 @@
 {
   "novel_title": "Hydrogen Jukebox",
-  "total_chapters": 1,
-  "last_updated": "2025-11-05 18:12:20 UTC",
+  "total_chapters": 2,
+  "last_updated": "2025-11-06 14:25:08 UTC",
   "gist_id": "f80e0314b03be59d97a32e27f1fce44c",
   "completed": false,
   "chapters": [
@@ -12,6 +12,14 @@
       "gist_url": "https://gist.github.com/f80e0314b03be59d97a32e27f1fce44c#poem_001.md",
       "chapter_name": "The Porcelain Heart",
       "published_date": "2025-11-05 18:12:19 UTC"
+    },
+    {
+      "chapter": 2,
+      "filename": "poem_002.md",
+      "url": "https://gist.githubusercontent.com/pappater/f80e0314b03be59d97a32e27f1fce44c/raw/559b839dc181c76911aa5b6f8e752a7fcc7e57ec/poem_002.md",
+      "gist_url": "https://gist.github.com/f80e0314b03be59d97a32e27f1fce44c#poem_002.md",
+      "chapter_name": "Syllables of Stone",
+      "published_date": "2025-11-06 14:25:07 UTC"
     }
   ]
 }
