@@ -1,7 +1,7 @@
 {
   "novel_title": "Of Old Man",
-  "total_chapters": 26,
-  "last_updated": "2025-11-07 18:48:14 UTC",
+  "total_chapters": 27,
+  "last_updated": "2025-11-07 19:40:24 UTC",
   "gist_id": "9fa4af8eb29c0097cc525f2d38503c2e",
   "completed": false,
   "chapters": [
@@ -238,6 +238,15 @@
       "chapter_name": "Morning's Soft Release",
       "published_date": "2025-11-07 18:48:13 UTC",
       "poetry_type": "Minute poem"
+    },
+    {
+      "chapter": 27,
+      "filename": "poem_027.md",
+      "url": "https://gist.githubusercontent.com/pappater/9fa4af8eb29c0097cc525f2d38503c2e/raw/eccbd7a8e1abe29ae22581c63c0063825ecf0c6c/poem_027.md",
+      "gist_url": "https://gist.github.com/9fa4af8eb29c0097cc525f2d38503c2e#poem_027.md",
+      "chapter_name": "The Quest for the Frostbloom",
+      "published_date": "2025-11-07 19:40:23 UTC",
+      "poetry_type": "Narrative poem"
     }
   ]
 }
