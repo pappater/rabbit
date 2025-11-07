@@ -1,8 +1,25 @@
+import { useState, useEffect } from 'react';
 import './Footer.css';
 
 export default function Footer({ isReaderPage = false }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Check initially
+    checkMobile();
+    
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   // Hide footer on reader page in mobile view
-  if (typeof window !== 'undefined' && window.innerWidth <= 768 && isReaderPage) {
+  if (isMobile && isReaderPage) {
     return null;
   }
 
