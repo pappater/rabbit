@@ -8,7 +8,7 @@ and publishes all outputs to a single public GitHub Gist.
 import os
 import sys
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 import google.generativeai as genai
@@ -246,41 +246,70 @@ def main():
     
     # Generate all chapters
     for chapter_num in range(1, TOTAL_CHAPTERS + 1):
-        # Generate chapter
-        previous_summaries = "\n\n".join(all_summaries) if all_summaries else None
-        chapter_text = generate_chapter(chapter_num, series_bible, outline, previous_summaries)
-        
-        if not chapter_text:
-            print(f"Failed to generate chapter {chapter_num}. Stopping.")
+        try:
+            print(f"\n{'='*60}")
+            print(f"Processing Chapter {chapter_num} of {TOTAL_CHAPTERS}")
+            print(f"{'='*60}")
+            
+            # Generate chapter
+            previous_summaries = "\n\n".join(all_summaries) if all_summaries else None
+            chapter_text = generate_chapter(chapter_num, series_bible, outline, previous_summaries)
+            
+            if not chapter_text:
+                print(f"ERROR: Failed to generate chapter {chapter_num}.")
+                print(f"Successfully generated {chapter_num - 1} chapters so far.")
+                print("Saving progress and stopping...")
+                break
+            
+            # Extract chapter title
+            chapter_title = extract_chapter_title(chapter_text)
+            
+            # Save chapter locally immediately (checkpoint)
+            chapter_filename = f"chapter_{chapter_num:03d}.md"
+            save_file(DOCS_DIR / chapter_filename, chapter_text)
+            print(f"✓ Saved chapter locally: {chapter_filename}")
+            
+            # Generate summary
+            summary = generate_summary(chapter_num, chapter_text)
+            all_summaries.append(f"**Chapter {chapter_num}: {chapter_title}**\n{summary}")
+            
+            # Update continuity log
+            timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+            continuity_log.append(f"[{timestamp}] Chapter {chapter_num}: {chapter_title}")
+            
+            # Add to chapters data
+            chapters_data.append({
+                "chapter": chapter_num,
+                "filename": chapter_filename,
+                "chapter_name": chapter_title
+            })
+            
+            # Add to gist files
+            gist_files[chapter_filename] = InputFileContent(chapter_text)
+            
+            print(f"✓ Completed Chapter {chapter_num}: {chapter_title}")
+            
+            # Save progress periodically (every 5 chapters)
+            if chapter_num % 5 == 0:
+                print(f"\n--- Checkpoint: Saving progress after {chapter_num} chapters ---")
+                # Save summaries so far
+                summaries_content = "\n\n---\n\n".join(all_summaries)
+                save_file(DOCS_DIR / "summaries.md", summaries_content)
+                # Save continuity log so far
+                continuity_content = "\n".join(continuity_log)
+                save_file(DOCS_DIR / "continuity_log.txt", continuity_content)
+                print(f"--- Checkpoint saved ---\n")
+            
+        except Exception as e:
+            print(f"\n{'!'*60}")
+            print(f"ERROR: Exception occurred while processing chapter {chapter_num}")
+            print(f"Error: {e}")
+            print(f"Successfully generated {chapter_num - 1} chapters so far.")
+            print(f"{'!'*60}")
+            print("Saving progress and stopping...")
+            import traceback
+            traceback.print_exc()
             break
-        
-        # Extract chapter title
-        chapter_title = extract_chapter_title(chapter_text)
-        
-        # Save chapter locally
-        chapter_filename = f"chapter_{chapter_num:03d}.md"
-        save_file(DOCS_DIR / chapter_filename, chapter_text)
-        
-        # Generate summary
-        summary = generate_summary(chapter_num, chapter_text)
-        all_summaries.append(f"**Chapter {chapter_num}: {chapter_title}**\n{summary}")
-        
-        # Update continuity log
-        timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
-        continuity_log.append(f"[{timestamp}] Chapter {chapter_num}: {chapter_title}")
-        
-        # Add to chapters data
-        chapters_data.append({
-            "chapter": chapter_num,
-            "filename": chapter_filename,
-            "chapter_name": chapter_title
-        })
-        
-        # Add to gist files
-        gist_files[chapter_filename] = InputFileContent(chapter_text)
-        
-        print(f"Completed Chapter {chapter_num}: {chapter_title}")
-        print()
     
     # Save summaries
     summaries_content = "\n\n---\n\n".join(all_summaries)
@@ -293,7 +322,7 @@ def main():
     gist_files["continuity_log.txt"] = InputFileContent(continuity_content)
     
     # Create chapters.json
-    timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     chapters_json = {
         "novel_title": NOVEL_TITLE,
         "total_chapters": len(chapters_data),
