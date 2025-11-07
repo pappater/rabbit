@@ -1,7 +1,7 @@
 {
   "novel_title": "Of Old Man",
-  "total_chapters": 15,
-  "last_updated": "2025-11-07 07:42:07 UTC",
+  "total_chapters": 16,
+  "last_updated": "2025-11-07 08:51:23 UTC",
   "gist_id": "9fa4af8eb29c0097cc525f2d38503c2e",
   "completed": false,
   "chapters": [
@@ -139,6 +139,15 @@
       "chapter_name": "Elegy for the Vanished Stream",
       "published_date": "2025-11-07 07:42:06 UTC",
       "poetry_type": "Elegy"
+    },
+    {
+      "chapter": 16,
+      "filename": "poem_016.md",
+      "url": "https://gist.githubusercontent.com/pappater/9fa4af8eb29c0097cc525f2d38503c2e/raw/049bd7de314bcad7e7302080f78c1377fcc424fd/poem_016.md",
+      "gist_url": "https://gist.github.com/9fa4af8eb29c0097cc525f2d38503c2e#poem_016.md",
+      "chapter_name": "The Lingering Hour",
+      "published_date": "2025-11-07 08:51:22 UTC",
+      "poetry_type": "Villanelle"
     }
   ]
 }
