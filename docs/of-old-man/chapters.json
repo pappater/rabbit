@@ -1,7 +1,7 @@
 {
   "novel_title": "Of Old Man",
-  "total_chapters": 12,
-  "last_updated": "2025-11-07 04:45:55 UTC",
+  "total_chapters": 13,
+  "last_updated": "2025-11-07 05:44:04 UTC",
   "gist_id": "9fa4af8eb29c0097cc525f2d38503c2e",
   "completed": false,
   "chapters": [
@@ -112,6 +112,15 @@
       "chapter_name": "Window Rain",
       "published_date": "2025-11-07 04:45:54 UTC",
       "poetry_type": "Tanka"
+    },
+    {
+      "chapter": 13,
+      "filename": "poem_013.md",
+      "url": "https://gist.githubusercontent.com/pappater/9fa4af8eb29c0097cc525f2d38503c2e/raw/85f501e57df35116348863d00ba056248d540712/poem_013.md",
+      "gist_url": "https://gist.github.com/9fa4af8eb29c0097cc525f2d38503c2e#poem_013.md",
+      "chapter_name": "Dawn's Whisper",
+      "published_date": "2025-11-07 05:44:04 UTC",
+      "poetry_type": "ABC poem"
     }
   ]
 }
