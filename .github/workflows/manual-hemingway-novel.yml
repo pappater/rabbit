@@ -65,6 +65,6 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add docs/hemingway-novel/*.md docs/hemingway-novel/*.txt docs/hemingway-novel/chapters.json public/docs/hemingway-novel/chapters.json config.js
+          git add docs/hemingway-novel/series_bible.md docs/hemingway-novel/outline.md docs/hemingway-novel/summaries.md docs/hemingway-novel/continuity_log.txt docs/hemingway-novel/chapters.json docs/hemingway-novel/chapter_*.md public/docs/hemingway-novel/chapters.json config.js
           git diff --staged --quiet || git commit -m "Generate complete Hemingway novel: The Sun Also Rises Again"
           git push
