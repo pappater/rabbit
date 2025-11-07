@@ -1,7 +1,7 @@
 {
   "novel_title": "Of Old Man",
-  "total_chapters": 29,
-  "last_updated": "2025-11-07 21:41:20 UTC",
+  "total_chapters": 30,
+  "last_updated": "2025-11-07 22:42:58 UTC",
   "gist_id": "9fa4af8eb29c0097cc525f2d38503c2e",
   "completed": false,
   "chapters": [
@@ -265,6 +265,15 @@
       "chapter_name": "On Impermanence and Verse",
       "published_date": "2025-11-07 21:41:19 UTC",
       "poetry_type": "Shakespearean sonnet"
+    },
+    {
+      "chapter": 30,
+      "filename": "poem_030.md",
+      "url": "https://gist.githubusercontent.com/pappater/9fa4af8eb29c0097cc525f2d38503c2e/raw/14a01fb2ea969af79624e1933a4b2257fcdfdbd6/poem_030.md",
+      "gist_url": "https://gist.github.com/9fa4af8eb29c0097cc525f2d38503c2e#poem_030.md",
+      "chapter_name": "Vernal Awakening",
+      "published_date": "2025-11-07 22:42:58 UTC",
+      "poetry_type": "Acrostic"
     }
   ]
 }
