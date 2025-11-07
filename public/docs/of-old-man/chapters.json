@@ -1,7 +1,7 @@
 {
   "novel_title": "Of Old Man",
-  "total_chapters": 9,
-  "last_updated": "2025-11-07 02:19:11 UTC",
+  "total_chapters": 10,
+  "last_updated": "2025-11-07 03:32:14 UTC",
   "gist_id": "9fa4af8eb29c0097cc525f2d38503c2e",
   "completed": false,
   "chapters": [
@@ -85,6 +85,15 @@
       "chapter_name": "A Still Dart",
       "published_date": "2025-11-07 02:19:11 UTC",
       "poetry_type": "Paradelle"
+    },
+    {
+      "chapter": 10,
+      "filename": "poem_010.md",
+      "url": "https://gist.githubusercontent.com/pappater/9fa4af8eb29c0097cc525f2d38503c2e/raw/be9e078a6b93be5c0d9669c569d949e8c314c829/poem_010.md",
+      "gist_url": "https://gist.github.com/9fa4af8eb29c0097cc525f2d38503c2e#poem_010.md",
+      "chapter_name": "Polite Listener",
+      "published_date": "2025-11-07 03:32:13 UTC",
+      "poetry_type": "Senryu"
     }
   ]
 }
