@@ -28,7 +28,7 @@ function AppContent() {
         <Route path="/reader/:novelKey" element={<Reader />} />
         <Route path="/reader" element={<Reader />} />
       </Routes>
-      <Footer />
+      <Footer isReaderPage={isReaderPage} />
     </>
   );
 }
