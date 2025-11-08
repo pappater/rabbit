@@ -1,7 +1,7 @@
 {
   "novel_title": "Of Old Man",
-  "total_chapters": 31,
-  "last_updated": "2025-11-07 23:41:27 UTC",
+  "total_chapters": 32,
+  "last_updated": "2025-11-08 02:12:29 UTC",
   "gist_id": "9fa4af8eb29c0097cc525f2d38503c2e",
   "completed": false,
   "chapters": [
@@ -283,6 +283,15 @@
       "chapter_name": "To My Undying Light",
       "published_date": "2025-11-07 23:41:26 UTC",
       "poetry_type": "Love poem"
+    },
+    {
+      "chapter": 32,
+      "filename": "poem_032.md",
+      "url": "https://gist.githubusercontent.com/pappater/9fa4af8eb29c0097cc525f2d38503c2e/raw/e8af097d04c13da11058fc134eaf5cd57876c98f/poem_032.md",
+      "gist_url": "https://gist.github.com/9fa4af8eb29c0097cc525f2d38503c2e#poem_032.md",
+      "chapter_name": "On Human Endeavour",
+      "published_date": "2025-11-08 02:12:28 UTC",
+      "poetry_type": "Heroic couplet"
     }
   ]
 }
