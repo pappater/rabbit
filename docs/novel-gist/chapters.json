@@ -1,7 +1,7 @@
 {
   "novel_title": "The Weight of Promises",
-  "total_chapters": 9,
-  "last_updated": "2025-11-07 10:21:49 UTC",
+  "total_chapters": 10,
+  "last_updated": "2025-11-08 10:18:21 UTC",
   "gist_id": "51893c25959355bda1884804375ec3d8",
   "completed": false,
   "chapters": [
@@ -67,6 +67,13 @@
       "url": "https://gist.githubusercontent.com/pappater/51893c25959355bda1884804375ec3d8/raw/67671872661a58cfda7a75fcbee6a9d816aac1eb/chapter_009.md",
       "gist_url": "https://gist.github.com/51893c25959355bda1884804375ec3d8#chapter_009.md",
       "chapter_name": "Anna's Secret"
+    },
+    {
+      "chapter": 10,
+      "filename": "chapter_010.md",
+      "url": "https://gist.githubusercontent.com/pappater/51893c25959355bda1884804375ec3d8/raw/80f3cc9d337c22fb8b8a71751882cf3827250d95/chapter_010.md",
+      "gist_url": "https://gist.github.com/51893c25959355bda1884804375ec3d8#chapter_010.md",
+      "chapter_name": "The Choice"
     }
   ]
 }
