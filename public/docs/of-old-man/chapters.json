@@ -1,7 +1,7 @@
 {
   "novel_title": "Of Old Man",
-  "total_chapters": 33,
-  "last_updated": "2025-11-08 03:24:45 UTC",
+  "total_chapters": 34,
+  "last_updated": "2025-11-08 03:51:45 UTC",
   "gist_id": "9fa4af8eb29c0097cc525f2d38503c2e",
   "completed": false,
   "chapters": [
@@ -301,6 +301,15 @@
       "chapter_name": "On Transient Hues",
       "published_date": "2025-11-08 03:24:44 UTC",
       "poetry_type": "Petrarchan sonnet"
+    },
+    {
+      "chapter": 34,
+      "filename": "poem_034.md",
+      "url": "https://gist.githubusercontent.com/pappater/9fa4af8eb29c0097cc525f2d38503c2e/raw/760c3ae78c05b3ca2130ecb06497965c50bd5857/poem_034.md",
+      "gist_url": "https://gist.github.com/9fa4af8eb29c0097cc525f2d38503c2e#poem_034.md",
+      "chapter_name": "The Pilgrim's Way",
+      "published_date": "2025-11-08 03:51:44 UTC",
+      "poetry_type": "Allegory poem"
     }
   ]
 }
