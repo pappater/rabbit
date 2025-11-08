@@ -1,7 +1,7 @@
 {
   "novel_title": "Of Old Man",
-  "total_chapters": 34,
-  "last_updated": "2025-11-08 03:51:45 UTC",
+  "total_chapters": 35,
+  "last_updated": "2025-11-08 04:44:45 UTC",
   "gist_id": "9fa4af8eb29c0097cc525f2d38503c2e",
   "completed": false,
   "chapters": [
@@ -310,6 +310,15 @@
       "chapter_name": "The Pilgrim's Way",
       "published_date": "2025-11-08 03:51:44 UTC",
       "poetry_type": "Allegory poem"
+    },
+    {
+      "chapter": 35,
+      "filename": "poem_035.md",
+      "url": "https://gist.githubusercontent.com/pappater/9fa4af8eb29c0097cc525f2d38503c2e/raw/a785fbc790f2088ef0c07a27631a05763b5a932e/poem_035.md",
+      "gist_url": "https://gist.github.com/9fa4af8eb29c0097cc525f2d38503c2e#poem_035.md",
+      "chapter_name": "The Tide's Unfolding",
+      "published_date": "2025-11-08 04:44:44 UTC",
+      "poetry_type": "Chain verse"
     }
   ]
 }
