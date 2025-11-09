@@ -1,6 +1,26 @@
+import { useState, useEffect } from 'react';
 import './Footer.css';
+import { getRandomGenreSubgenrePair } from '../data/genres';
 
 export default function Footer({ isReaderPage = false }) {
+  const [currentGenre, setCurrentGenre] = useState({ genre: '', subgenre: '' });
+  const [key, setKey] = useState(0);
+
+  useEffect(() => {
+    // Initialize with a random genre
+    const initial = getRandomGenreSubgenrePair();
+    setCurrentGenre(initial);
+
+    const interval = setInterval(() => {
+      // Update the genre which will trigger the rolling animation via key change
+      const newGenre = getRandomGenreSubgenrePair();
+      setCurrentGenre(newGenre);
+      setKey(prev => prev + 1);
+    }, 5000); // Change every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   // Hide footer on reader page (both mobile and desktop)
   if (isReaderPage) {
     return null;
@@ -8,6 +28,11 @@ export default function Footer({ isReaderPage = false }) {
 
   return (
     <footer className="app-footer">
+      <div className="genre-container">
+        <div key={key} className="genre-text roll-in">
+          {currentGenre.subgenre}, {currentGenre.genre}
+        </div>
+      </div>
       <p>
         Mocking a poem every ten minutes{' '}
         <a 

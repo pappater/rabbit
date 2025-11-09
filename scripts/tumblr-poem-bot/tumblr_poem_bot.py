@@ -186,8 +186,16 @@ def post_to_tumblr(poem_text, poetry_type):
         # Extract title from poem content (first line with # prefix)
         title = extract_poem_title(poem_text)
         
-        # Format poem body
-        body = f"{poem_text}"
+        # Format poem body - remove the title line to avoid duplication
+        lines = poem_text.strip().split('\n')
+        if lines and lines[0].startswith('# '):
+            # Remove the title line and any following blank lines
+            body_lines = lines[1:]
+            while body_lines and body_lines[0].strip() == '':
+                body_lines.pop(0)
+            body = '\n'.join(body_lines)
+        else:
+            body = poem_text
         
         print(f"\nPosting to Tumblr...")
         print(f"Title: {title}")
