@@ -124,6 +124,9 @@ export async function fetchChapterContent(url, filename, novelKey) {
 export function parseMarkdown(markdown) {
   let html = markdown;
 
+  // Remove the first H1 heading (chapter title) to avoid duplication with the header
+  html = html.replace(/^# .*$/m, '');
+
   // Headers (process most specific first)
   html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
   html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
