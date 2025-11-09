@@ -44,7 +44,7 @@ export default function NotificationPrompt() {
   return (
     <div className="notification-prompt-overlay">
       <div className="notification-prompt">
-        <div className="notification-prompt-icon">🔔</div>
+        <div className="notification-prompt-icon">BELL</div>
         <h3 className="notification-prompt-title">Stay Updated with New Poems</h3>
         <p className="notification-prompt-message">
           Get notified every 2 hours when we post a new poem to Twitter (@mockpoet).

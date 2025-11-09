@@ -31,9 +31,9 @@ export default function BookCard({
 
   const getDifficultyLabel = () => {
     const labels = {
-      'easy': '📖 Easy Read',
-      'medium': '📚 Medium Read',
-      'difficult': '📕 Advanced Read'
+      'easy': 'Easy Read',
+      'medium': 'Medium Read',
+      'difficult': 'Advanced Read'
     };
     return labels[difficulty] || labels['medium'];
   };
@@ -49,7 +49,7 @@ export default function BookCard({
           <div className="book-card-meta-item">
             <span className="meta-label">Status:</span>
             <span className={`meta-value ${completed ? 'completed' : 'ongoing'}`}>
-              {completed ? '✓ Completed' : '📝 Ongoing'}
+              {completed ? 'Completed' : 'Ongoing'}
             </span>
           </div>
           <div className="book-card-meta-item">
@@ -64,7 +64,7 @@ export default function BookCard({
           )}
           <div className="book-card-meta-item">
             <span className="meta-label">Frequency:</span>
-            <span className="meta-value">🔄 {updateFrequency}</span>
+            <span className="meta-value">{updateFrequency}</span>
           </div>
         </div>
         <div className="book-card-updated">
