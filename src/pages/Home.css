@@ -48,7 +48,7 @@
 
   .book-group-scroll {
     display: flex;
-    gap: 0;
+    gap: var(--spacing-lg);
     overflow-x: auto;
     overflow-y: hidden;
     padding-bottom: var(--spacing-md);
