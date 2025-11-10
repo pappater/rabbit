@@ -9,7 +9,6 @@ export default function BookCard({
   isShortStories = false, 
   isPoems = false,
   isDrama = false,
-  genre = null,
   subgenre = null,
   completed = false,
   updateFrequency = 'Updated periodically',
