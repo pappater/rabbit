@@ -64,6 +64,14 @@ An automated Twitter bot that posts short poems to Twitter/X.
 - **Posted**: Every 2 hours to Twitter/X
 - **Setup**: See [SETUP_TWITTER_BOT.md](SETUP_TWITTER_BOT.md) for Twitter API configuration
 
+### The Absurd Ascent
+A completed farce drama exploring themes of ambition, social climbing, and the absurdity of high society.
+- **Genre**: Drama (Farce)
+- **Style**: Theatrical comedy with witty dialogue and satirical social commentary
+- **Scenes**: 14 scenes across 3 acts (completed)
+- **Status**: Completed
+- **Setup**: See [SETUP_FARCE_DRAMA.md](SETUP_FARCE_DRAMA.md) for configuration details
+
 ## Quick Start
 
 1. Visit the [deployed site](#) or run locally:
@@ -81,12 +89,14 @@ An automated Twitter bot that posts short poems to Twitter/X.
 For detailed setup instructions, see:
 - [SETUP_TUMBLR_BOT.md](SETUP_TUMBLR_BOT.md) - Setup for Tumblr Poem Bot (NEW!)
 - [SETUP_TWITTER_BOT.md](SETUP_TWITTER_BOT.md) - Setup for Twitter Poem Bot
+- [SETUP_FARCE_DRAMA.md](SETUP_FARCE_DRAMA.md) - Setup for "The Absurd Ascent"
 - [SETUP_STRANGER_NOVEL.md](SETUP_STRANGER_NOVEL.md) - Setup for "The Indifferent Shore"
 - [SETUP_WEREWOLF_NOVEL.md](SETUP_WEREWOLF_NOVEL.md) - Setup for "Moonbound Devotion"
 - [SETUP_FLYING_BANANA.md](SETUP_FLYING_BANANA.md) - Setup for "Flying Banana"
 - [SETUP_OF_OLD_MAN.md](SETUP_OF_OLD_MAN.md) - Setup for "Of Old Man"
 - [docs/flying-banana/README.md](docs/flying-banana/README.md) - Documentation for "Flying Banana"
 - [docs/of-old-man/README.md](docs/of-old-man/README.md) - Documentation for "Of Old Man"
+- [docs/farce-drama/README.md](docs/farce-drama/README.md) - Documentation for "The Absurd Ascent"
 - [ENVIRONMENT_VARIABLES.md](ENVIRONMENT_VARIABLES.md) - Environment variables reference
 - [docs/novel-gist/README.md](docs/novel-gist/README.md) - Original novel documentation
 
