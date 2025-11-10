@@ -34,7 +34,7 @@ export default function Footer({ isReaderPage = false }) {
         </div>
       </div>
       <p>
-        Mocking a poem every ten minutes{' '}
+        Mocking a poem every hour{' '}
         <a 
           href="https://mockpoet.tumblr.com/" 
           target="_blank" 

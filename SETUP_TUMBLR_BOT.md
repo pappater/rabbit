@@ -1,11 +1,11 @@
 # Setup Guide: Tumblr Poem Bot
 
-This guide covers the setup process for the Tumblr Poem Bot, which posts poems to Tumblr every 10 minutes.
+This guide covers the setup process for the Tumblr Poem Bot, which posts poems to Tumblr every hour.
 
 ## Overview
 
 The Tumblr Poem Bot:
-- Posts poems **every 10 minutes** to Tumblr
+- Posts poems **every hour** to Tumblr
 - Randomly selects from **100 different poetry types** for each poem
 - Generates poems of appropriate length for the poetry type
 - Uses Google Gemini AI for poem generation
@@ -178,7 +178,7 @@ The configuration files are already set up in the repository:
 - `scripts/tumblr-poem-bot/requirements.txt` - Python dependencies
 
 ### Workflow File
-- `.github/workflows/tumblr-poem-bot.yml` - Runs every 10 minutes (cron: `*/10 * * * *`)
+- `.github/workflows/tumblr-poem-bot.yml` - Runs every hour (cron: `0 * * * *`)
 
 ## Step 5: Test the Bot (Manual Run)
 
@@ -195,17 +195,17 @@ To test the setup before waiting for the scheduled run:
 After the first successful run:
 
 ### Verify Bot is Working
-1. Check GitHub Actions for workflow runs (should run every 10 minutes)
+1. Check GitHub Actions for workflow runs (should run every hour)
 2. Check your Tumblr blog for new poems
 3. Verify hashtags are being added to posts
 4. Confirm different poetry types are being used
 
 ### Expected Posting Frequency
-- **Every 10 minutes** (144 poems per day)
-- 1,008 poems per week
-- ~4,320 poems per month
+- **Every hour** (24 poems per day)
+- 168 poems per week
+- ~720 poems per month
 
-**Note:** This is a high-frequency bot. Consider adjusting the schedule if this is too frequent for your audience.
+**Note:** This is a reasonable frequency for automated posting.
 
 ## Poetry Types
 
@@ -232,7 +232,7 @@ See `scripts/tumblr-poem-bot/poetry_types.json` for the complete list.
 ## Workflow Schedule
 
 The workflow runs:
-- **Schedule**: Every 10 minutes (cron: `*/10 * * * *`)
+- **Schedule**: Every hour (cron: `0 * * * *`)
 - **Manual**: Can be triggered via workflow_dispatch
 
 ### Adjusting the Schedule
@@ -279,7 +279,7 @@ Each post includes:
 ```
 mockpoet/
 ├── .github/workflows/
-│   └── tumblr-poem-bot.yml          # Every 10 minutes workflow
+│   └── tumblr-poem-bot.yml          # Every hour workflow
 ├── scripts/tumblr-poem-bot/
 │   ├── tumblr_poem_bot.py           # Main bot script
 │   ├── poetry_types.json            # List of 100 poetry types
@@ -359,7 +359,7 @@ To modify the hashtags used:
 
 - **Disclose that poems are AI-generated** (add to Tumblr blog description)
 - **Respect Tumblr's automation rules**
-- **Don't spam or over-post** (10 min = 144 posts/day is aggressive)
+- **Maintain appropriate posting frequency** (hourly posting = 24 posts/day)
 - **Monitor for inappropriate content** (review generated poems periodically)
 
 ## Maintenance

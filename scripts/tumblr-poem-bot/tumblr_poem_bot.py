@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Tumblr Poem Bot
-Posts a poem to Tumblr every 10 minutes.
+Posts a poem to Tumblr every hour.
 Randomly selects a poetry type from a configurable list and generates
 a poem in that style with relevant hashtags.
 """
