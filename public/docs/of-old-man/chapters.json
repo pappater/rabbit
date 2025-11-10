@@ -1,7 +1,7 @@
 {
   "novel_title": "Of Old Man",
-  "total_chapters": 39,
-  "last_updated": "2025-11-09 22:13:55 UTC",
+  "total_chapters": 40,
+  "last_updated": "2025-11-10 10:19:39 UTC",
   "gist_id": "9fa4af8eb29c0097cc525f2d38503c2e",
   "completed": false,
   "chapters": [
@@ -355,6 +355,15 @@
       "chapter_name": "First Frost",
       "published_date": "2025-11-09 22:13:55 UTC",
       "poetry_type": "Haiku"
+    },
+    {
+      "chapter": 40,
+      "filename": "poem_040.md",
+      "url": "https://gist.githubusercontent.com/pappater/9fa4af8eb29c0097cc525f2d38503c2e/raw/7d1a90bc406bb0e918ec5b67fb2590d679ff4a6d/poem_040.md",
+      "gist_url": "https://gist.github.com/9fa4af8eb29c0097cc525f2d38503c2e#poem_040.md",
+      "chapter_name": "The Unyielding Current",
+      "published_date": "2025-11-10 10:19:38 UTC",
+      "poetry_type": "Sestina"
     }
   ]
 }
