@@ -53,7 +53,7 @@ A poetry collection exploring the full spectrum of poetic forms and traditions.
 An automated Tumblr bot that posts poems to Tumblr.
 - **Style**: Varies by poetry type - 100 different forms including all classical and modern poetry types
 - **Poems**: Full-length poems in various styles
-- **Posted**: Every 10 minutes to Tumblr
+- **Posted**: Every hour to Tumblr
 - **Hashtags**: Automatically includes relevant poetry hashtags for better reach
 - **Setup**: See [SETUP_TUMBLR_BOT.md](SETUP_TUMBLR_BOT.md) for Tumblr API configuration
 
@@ -111,7 +111,7 @@ mockpoet/
 │   ├── daily-flying-banana.yml # Flying Banana
 │   ├── daily-hydrogen-jukebox.yml # Hydrogen Jukebox
 │   ├── hourly-of-old-man.yml  # Of Old Man (twice daily)
-│   ├── tumblr-poem-bot.yml    # Tumblr Poem Bot (every 10 minutes)
+│   ├── tumblr-poem-bot.yml    # Tumblr Poem Bot (every hour)
 │   ├── twitter-poem-bot.yml   # Twitter Poem Bot (every 2 hours)
 │   └── deploy.yml             # Deploy React app to GitHub Pages
 ├── docs/                       # Novel content files
