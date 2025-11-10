@@ -1,7 +1,7 @@
 {
   "novel_title": "Hydrogen Jukebox",
-  "total_chapters": 5,
-  "last_updated": "2025-11-09 14:19:07 UTC",
+  "total_chapters": 6,
+  "last_updated": "2025-11-10 14:25:19 UTC",
   "gist_id": "f80e0314b03be59d97a32e27f1fce44c",
   "completed": false,
   "chapters": [
@@ -44,6 +44,14 @@
       "gist_url": "https://gist.github.com/f80e0314b03be59d97a32e27f1fce44c#poem_005.md",
       "chapter_name": "The Pine by the Winter Sea",
       "published_date": "2025-11-09 14:19:06 UTC"
+    },
+    {
+      "chapter": 6,
+      "filename": "poem_006.md",
+      "url": "https://gist.githubusercontent.com/pappater/f80e0314b03be59d97a32e27f1fce44c/raw/4525b5eab485cb3007a1ac1284abd44836561a21/poem_006.md",
+      "gist_url": "https://gist.github.com/f80e0314b03be59d97a32e27f1fce44c#poem_006.md",
+      "chapter_name": "The Unwritten Work",
+      "published_date": "2025-11-10 14:25:18 UTC"
     }
   ]
 }
