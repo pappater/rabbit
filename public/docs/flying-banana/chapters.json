@@ -1,7 +1,7 @@
 {
   "novel_title": "Flying Banana",
-  "total_chapters": 9,
-  "last_updated": "2025-11-10 13:35:56 UTC",
+  "total_chapters": 10,
+  "last_updated": "2025-11-11 13:34:52 UTC",
   "gist_id": "efc9cfe56f7bc265ec0043f0ffbd533c",
   "completed": false,
   "chapters": [
@@ -76,6 +76,14 @@
       "gist_url": "https://gist.github.com/efc9cfe56f7bc265ec0043f0ffbd533c#story_009.md",
       "chapter_name": "The Perilous Geometry of Afternoon",
       "published_date": "2025-11-10 13:35:55 UTC"
+    },
+    {
+      "chapter": 10,
+      "filename": "story_010.md",
+      "url": "https://gist.githubusercontent.com/pappater/efc9cfe56f7bc265ec0043f0ffbd533c/raw/2af56fc9106d4bd547a81d844fa70b2ed0eab2c5/story_010.md",
+      "gist_url": "https://gist.github.com/efc9cfe56f7bc265ec0043f0ffbd533c#story_010.md",
+      "chapter_name": "The Stone's Hum",
+      "published_date": "2025-11-11 13:34:51 UTC"
     }
   ]
 }
