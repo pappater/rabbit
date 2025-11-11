@@ -1,7 +1,7 @@
 {
   "novel_title": "Of Old Man",
-  "total_chapters": 42,
-  "last_updated": "2025-11-11 10:18:33 UTC",
+  "total_chapters": 43,
+  "last_updated": "2025-11-11 22:15:53 UTC",
   "gist_id": "9fa4af8eb29c0097cc525f2d38503c2e",
   "completed": false,
   "chapters": [
@@ -382,6 +382,15 @@
       "chapter_name": "Morning's Forge",
       "published_date": "2025-11-11 10:18:32 UTC",
       "poetry_type": "Curtal sonnet"
+    },
+    {
+      "chapter": 43,
+      "filename": "poem_043.md",
+      "url": "https://gist.githubusercontent.com/pappater/9fa4af8eb29c0097cc525f2d38503c2e/raw/5e4398dcb201105a670756187fa997b1964464f9/poem_043.md",
+      "gist_url": "https://gist.github.com/9fa4af8eb29c0097cc525f2d38503c2e#poem_043.md",
+      "chapter_name": "Upon a Gardener's Stone",
+      "published_date": "2025-11-11 22:15:52 UTC",
+      "poetry_type": "Epitaph"
     }
   ]
 }
