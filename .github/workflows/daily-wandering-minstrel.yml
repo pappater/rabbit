@@ -1,0 +1,126 @@
+name: Daily Wandering Minstrel Ballad to Gist
+
+on:
+  # Run once daily at 14:00 UTC (different time from other collections)
+  schedule:
+    - cron: '0 14 * * *'
+  
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  generate-ballad:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/wandering-minstrel/requirements.txt
+      
+      - name: Check if collection is complete
+        id: check_completion
+        run: |
+          # Check if completed flag is true in chapters.json
+          if [ -f docs/wandering-minstrel/chapters.json ]; then
+            COMPLETED=$(jq -r '.completed' docs/wandering-minstrel/chapters.json)
+            echo "completed=$COMPLETED" >> $GITHUB_OUTPUT
+            if [ "$COMPLETED" = "true" ]; then
+              echo "Collection is already complete (300 poems reached)"
+              echo "skip_generation=true" >> $GITHUB_OUTPUT
+            else
+              echo "Collection is ongoing"
+              echo "skip_generation=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "chapters.json not found, proceeding with generation"
+            echo "skip_generation=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Generate and publish ballad
+        if: steps.check_completion.outputs.skip_generation != 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-2.5-flash
+          GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+          WANDERING_MINSTREL_GIST_ID: ${{ secrets.WANDERING_MINSTREL_GIST_ID }}
+        run: |
+          python scripts/wandering-minstrel/wandering_minstrel_daily_to_gist.py
+      
+      - name: Update config.js with gist ID if missing
+        if: steps.check_completion.outputs.skip_generation != 'true'
+        env:
+          WANDERING_MINSTREL_GIST_ID: ${{ secrets.WANDERING_MINSTREL_GIST_ID }}
+        run: |
+          # Check if gist ID is empty in config.js for wandering_minstrel section only
+          EMPTY_PATTERN="id: ''"
+          if awk "/wandering_minstrel/,/^    \}/" config.js | grep -q "$EMPTY_PATTERN"; then
+            echo "Updating config.js with WANDERING_MINSTREL_GIST_ID for wandering_minstrel"
+            awk -v gist_id="$WANDERING_MINSTREL_GIST_ID" -v pattern="$EMPTY_PATTERN" '
+              /wandering_minstrel/,/^    \}/ {
+                if ($0 ~ pattern) {
+                  sub(pattern, "id: '\''" gist_id "'\''")
+                }
+              }
+              {print}
+            ' config.js > config.js.tmp && mv config.js.tmp config.js
+          else
+            echo "Gist ID already set in config.js for wandering_minstrel"
+          fi
+      
+      - name: Update src/config.js with gist ID if missing
+        if: steps.check_completion.outputs.skip_generation != 'true'
+        env:
+          WANDERING_MINSTREL_GIST_ID: ${{ secrets.WANDERING_MINSTREL_GIST_ID }}
+        run: |
+          # Check if gist ID is empty in src/config.js for wandering_minstrel section only
+          EMPTY_PATTERN="id: ''"
+          if awk "/wandering_minstrel/,/^    \}/" src/config.js | grep -q "$EMPTY_PATTERN"; then
+            echo "Updating src/config.js with WANDERING_MINSTREL_GIST_ID for wandering_minstrel"
+            awk -v gist_id="$WANDERING_MINSTREL_GIST_ID" -v pattern="$EMPTY_PATTERN" '
+              /wandering_minstrel/,/^    \}/ {
+                if ($0 ~ pattern) {
+                  sub(pattern, "id: '\''" gist_id "'\''")
+                }
+              }
+              {print}
+            ' src/config.js > src/config.js.tmp && mv src/config.js.tmp src/config.js
+          else
+            echo "Gist ID already set in src/config.js for wandering_minstrel"
+          fi
+      
+      - name: Sync chapters.json to public folder
+        if: steps.check_completion.outputs.skip_generation != 'true'
+        run: |
+          # Create directory if it doesn't exist
+          mkdir -p public/docs/wandering-minstrel
+          # Copy chapters.json from docs to public for deployment
+          echo "Syncing chapters.json to public/docs/wandering-minstrel/"
+          cp docs/wandering-minstrel/chapters.json public/docs/wandering-minstrel/chapters.json
+      
+      - name: Commit and push updated files
+        if: steps.check_completion.outputs.skip_generation != 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add docs/wandering-minstrel/chapters.json public/docs/wandering-minstrel/chapters.json config.js src/config.js
+          git diff --staged --quiet || git commit -m "Update Wandering Minstrel files after ballad generation"
+          git push
+      
+      - name: Collection complete notification
+        if: steps.check_completion.outputs.completed == 'true'
+        run: |
+          echo "🎉 Wandering Minstrel collection is COMPLETE! 🎉"
+          echo "All 300 ballad poems have been generated."
+          echo "No further poems will be generated."

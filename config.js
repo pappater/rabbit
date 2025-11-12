@@ -86,6 +86,15 @@ const CONFIG = {
       },
       localPath: 'docs/satire-novel',
       type: 'novel'  // Fiction novel
+    },
+    wandering_minstrel: {
+      title: "Wandering Minstrel",
+      gist: {
+        username: 'pappater',
+        id: ''  // Will be set via WANDERING_MINSTREL_GIST_ID secret by GitHub Actions workflow
+      },
+      localPath: 'docs/wandering-minstrel',
+      type: 'poems'  // Flag to indicate this is a poem collection
     }
   },
   
