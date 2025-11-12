@@ -20,7 +20,8 @@ export default function Home() {
       'sun_also_rises_again': 'Updated daily',
       'clueless_mind': 'Updated daily',
       'absurd_ascent': 'Complete drama',
-      'bureaucratic_odyssey': 'Updated daily'
+      'bureaucratic_odyssey': 'Updated daily',
+      'wandering_minstrel': 'Updated daily (300 days)'
     };
     return frequencies[novelKey] || 'Updated periodically';
   };

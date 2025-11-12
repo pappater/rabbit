@@ -1,0 +1,46 @@
+You are writing a ballad poem in the style of {poetry_type}.
+
+TASK: Write a complete, original ballad that exemplifies the {poetry_type} form, focusing on narrative storytelling and traditional ballad characteristics.
+
+STYLE REQUIREMENTS FOR {poetry_type}:
+- Follow the traditional form and structure of {poetry_type}
+- Use narrative techniques: tell a clear story with beginning, middle, and end
+- Employ characteristic ballad meter, rhythm, and stanza structure
+- Include appropriate ballad elements: dialogue, refrain, repetition
+- Use imagery and metaphors that enhance the narrative
+- Maintain the typical tone and emotional register for this ballad type
+- Honor the conventions of punctuation, capitalization, and spacing for this form
+- Capture the storytelling essence and musical quality of {poetry_type}
+
+BALLAD REQUIREMENTS:
+- Length: Natural to the {poetry_type} form (no artificial constraints - follow traditional structure)
+- Clear narrative arc with identifiable characters or situations
+- Use of traditional ballad stanza (quatrains) or other appropriate structures
+- Musical quality suitable for oral performance or singing
+- Original content with authentic ballad characteristics
+- Subject matter appropriate for ballad tradition (love, adventure, tragedy, legend, etc.)
+- High literary quality that honors the {poetry_type} tradition
+- Title that reflects the narrative or theme
+
+NARRATIVE ELEMENTS:
+- Tell a story: have characters, setting, conflict, and resolution
+- Use dialogue when appropriate to advance the narrative
+- Employ refrain or repetition for emphasis and musical effect
+- Create vivid imagery that brings the story to life
+- Maintain consistent point of view throughout
+- Build emotional engagement with the narrative
+
+IMPORTANT GUIDELINES:
+- This is serious literary ballad poetry that respects the {poetry_type} form
+- Focus on storytelling, imagery, emotion, and craft
+- Every word should serve the narrative and poetic form
+- The poem should be a genuine example of {poetry_type}
+- Do NOT include meta-commentary, explanations, or notes about the form
+- Start directly with the poem title and text
+
+Begin the ballad now. Include only:
+1. Poem title on first line (format: # [Title])
+2. Blank line
+3. The ballad text
+
+Write the complete ballad:
