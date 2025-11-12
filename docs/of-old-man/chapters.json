@@ -1,7 +1,7 @@
 {
   "novel_title": "Of Old Man",
-  "total_chapters": 43,
-  "last_updated": "2025-11-11 22:15:53 UTC",
+  "total_chapters": 44,
+  "last_updated": "2025-11-12 10:18:49 UTC",
   "gist_id": "9fa4af8eb29c0097cc525f2d38503c2e",
   "completed": false,
   "chapters": [
@@ -391,6 +391,15 @@
       "chapter_name": "Upon a Gardener's Stone",
       "published_date": "2025-11-11 22:15:52 UTC",
       "poetry_type": "Epitaph"
+    },
+    {
+      "chapter": 44,
+      "filename": "poem_044.md",
+      "url": "https://gist.githubusercontent.com/pappater/9fa4af8eb29c0097cc525f2d38503c2e/raw/e94b732f9827e5464105053bcdc31342ec09c117/poem_044.md",
+      "gist_url": "https://gist.github.com/9fa4af8eb29c0097cc525f2d38503c2e#poem_044.md",
+      "chapter_name": "The Mighty Mold",
+      "published_date": "2025-11-12 10:18:48 UTC",
+      "poetry_type": "Double dactyl"
     }
   ]
 }
