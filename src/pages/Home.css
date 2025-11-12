@@ -6,68 +6,75 @@
   padding: var(--spacing-xl);
 }
 
-/* Mobile view - simple list */
+/* Mobile view - simple list (hidden, using grouped view instead) */
 #book-card-container {
+  display: none;
+}
+
+/* Grouped view - shown on both mobile and desktop */
+.desktop-book-groups {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-xl);
   width: 100%;
 }
 
-/* Desktop view - grouped by type (hidden on mobile) */
-.desktop-book-groups {
+.book-group {
+  width: 100%;
+}
+
+.book-group-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -0.5px;
+  text-transform: capitalize;
+}
+
+.book-group-scroll {
+  display: flex;
+  justify-content: flex-start;
+  gap: var(--spacing-md);
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: var(--spacing-md);
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+}
+
+.book-group-scroll::-webkit-scrollbar {
   display: none;
+}
+
+.book-group-scroll .book-card {
+  flex: 0 0 280px;
+  max-width: 280px;
+  margin: 0;
+  scroll-snap-align: start;
 }
 
 @media (min-width: 769px) {
   .desktop-book-groups {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xl);
-    width: 100%;
     max-width: 1400px;
     margin-top: 80px;
   }
 
-  #book-card-container {
-    display: none;
-  }
-
-  .book-group {
-    width: 100%;
-  }
-
   .book-group-title {
     font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
     margin-bottom: var(--spacing-lg);
     letter-spacing: -1px;
-    text-transform: capitalize;
   }
 
   .book-group-scroll {
-    display: flex;
-    justify-content: flex-start;
     gap: var(--spacing-lg);
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: var(--spacing-md);
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    scroll-snap-type: x mandatory;
-  }
-
-  .book-group-scroll::-webkit-scrollbar {
-    display: none;
   }
 
   .book-group-scroll .book-card {
     flex: 0 0 400px;
     max-width: 400px;
-    margin: 0;
-    scroll-snap-align: start;
   }
 }
 
