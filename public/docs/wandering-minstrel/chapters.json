@@ -2,10 +2,20 @@
   "novel_title": "Wandering Minstrel",
   "genre": "Poetry",
   "subgenre": "Ballad",
-  "total_chapters": 0,
-  "last_updated": "2025-11-12 13:24:00 UTC",
-  "gist_id": "",
+  "total_chapters": 1,
+  "last_updated": "2025-11-12 14:24:46 UTC",
+  "gist_id": "d1e19d73ef4f0c8949b184d368f11493",
   "completed": false,
   "max_poems": 300,
-  "chapters": []
+  "chapters": [
+    {
+      "chapter": 1,
+      "filename": "poem_001.md",
+      "url": "https://gist.githubusercontent.com/pappater/d1e19d73ef4f0c8949b184d368f11493/raw/e0e65f2a271561a63862505637f54193362c8b3c/poem_001.md",
+      "gist_url": "https://gist.github.com/d1e19d73ef4f0c8949b184d368f11493#poem_001.md",
+      "chapter_name": "The Grey Shore's Promise",
+      "published_date": "2025-11-12 14:24:45 UTC",
+      "poetry_type": "Lyric ballad"
+    }
+  ]
 }

@@ -91,7 +91,7 @@ export const CONFIG = {
       title: "Wandering Minstrel",
       gist: {
         username: 'pappater',
-        id: ''  // Will be set via WANDERING_MINSTREL_GIST_ID secret by GitHub Actions workflow
+        id: 'd1e19d73ef4f0c8949b184d368f11493'  // Will be set via WANDERING_MINSTREL_GIST_ID secret by GitHub Actions workflow
       },
       localPath: 'docs/wandering-minstrel',
       type: 'poems'  // Flag to indicate this is a poem collection
