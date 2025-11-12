@@ -1,7 +1,7 @@
 {
   "novel_title": "Of Old Man",
-  "total_chapters": 44,
-  "last_updated": "2025-11-12 10:18:49 UTC",
+  "total_chapters": 45,
+  "last_updated": "2025-11-12 22:16:02 UTC",
   "gist_id": "9fa4af8eb29c0097cc525f2d38503c2e",
   "completed": false,
   "chapters": [
@@ -400,6 +400,15 @@
       "chapter_name": "The Mighty Mold",
       "published_date": "2025-11-12 10:18:48 UTC",
       "poetry_type": "Double dactyl"
+    },
+    {
+      "chapter": 45,
+      "filename": "poem_045.md",
+      "url": "https://gist.githubusercontent.com/pappater/9fa4af8eb29c0097cc525f2d38503c2e/raw/1d9373835cd77336d90fa534ab5f99c547c6323f/poem_045.md",
+      "gist_url": "https://gist.github.com/9fa4af8eb29c0097cc525f2d38503c2e#poem_045.md",
+      "chapter_name": "The Luminous Scientist",
+      "published_date": "2025-11-12 22:16:01 UTC",
+      "poetry_type": "Clerihew"
     }
   ]
 }
