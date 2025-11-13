@@ -1,7 +1,7 @@
 {
   "novel_title": "Of Old Man",
-  "total_chapters": 45,
-  "last_updated": "2025-11-12 22:16:02 UTC",
+  "total_chapters": 46,
+  "last_updated": "2025-11-13 10:19:08 UTC",
   "gist_id": "9fa4af8eb29c0097cc525f2d38503c2e",
   "completed": false,
   "chapters": [
@@ -409,6 +409,15 @@
       "chapter_name": "The Luminous Scientist",
       "published_date": "2025-11-12 22:16:01 UTC",
       "poetry_type": "Clerihew"
+    },
+    {
+      "chapter": 46,
+      "filename": "poem_046.md",
+      "url": "https://gist.githubusercontent.com/pappater/9fa4af8eb29c0097cc525f2d38503c2e/raw/3042f434f2160acb302fbecb9a8dbfba567c102a/poem_046.md",
+      "gist_url": "https://gist.github.com/9fa4af8eb29c0097cc525f2d38503c2e#poem_046.md",
+      "chapter_name": "The Granite Dawn",
+      "published_date": "2025-11-13 10:19:06 UTC",
+      "poetry_type": "Curtal sonnet"
     }
   ]
 }
