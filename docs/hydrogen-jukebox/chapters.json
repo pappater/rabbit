@@ -1,7 +1,7 @@
 {
   "novel_title": "Hydrogen Jukebox",
-  "total_chapters": 8,
-  "last_updated": "2025-11-12 14:26:36 UTC",
+  "total_chapters": 9,
+  "last_updated": "2025-11-14 14:24:31 UTC",
   "gist_id": "f80e0314b03be59d97a32e27f1fce44c",
   "completed": false,
   "chapters": [
@@ -68,6 +68,14 @@
       "gist_url": "https://gist.github.com/f80e0314b03be59d97a32e27f1fce44c#poem_008.md",
       "chapter_name": "Le Souffle des Lampes \u00c9teintes",
       "published_date": "2025-11-12 14:26:35 UTC"
+    },
+    {
+      "chapter": 9,
+      "filename": "poem_009.md",
+      "url": "https://gist.githubusercontent.com/pappater/f80e0314b03be59d97a32e27f1fce44c/raw/a65ab3aba25c8be94e05616bf09d1e6f598d6b1e/poem_009.md",
+      "gist_url": "https://gist.github.com/f80e0314b03be59d97a32e27f1fce44c#poem_009.md",
+      "chapter_name": "The Fire of Ice",
+      "published_date": "2025-11-14 14:24:30 UTC"
     }
   ]
 }
