@@ -1,7 +1,7 @@
 {
   "novel_title": "Flying Banana",
-  "total_chapters": 12,
-  "last_updated": "2025-11-14 13:35:06 UTC",
+  "total_chapters": 13,
+  "last_updated": "2025-11-15 13:28:34 UTC",
   "gist_id": "efc9cfe56f7bc265ec0043f0ffbd533c",
   "completed": false,
   "chapters": [
@@ -100,6 +100,14 @@
       "gist_url": "https://gist.github.com/efc9cfe56f7bc265ec0043f0ffbd533c#story_012.md",
       "chapter_name": "The Perambulations of the Vanishing Point",
       "published_date": "2025-11-14 13:35:05 UTC"
+    },
+    {
+      "chapter": 13,
+      "filename": "story_013.md",
+      "url": "https://gist.githubusercontent.com/pappater/efc9cfe56f7bc265ec0043f0ffbd533c/raw/a7f2b372701745ac66c06258f2a7989ea1dd1962/story_013.md",
+      "gist_url": "https://gist.github.com/efc9cfe56f7bc265ec0043f0ffbd533c#story_013.md",
+      "chapter_name": "The Invisible Topography",
+      "published_date": "2025-11-15 13:28:33 UTC"
     }
   ]
 }
