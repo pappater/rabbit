@@ -1,7 +1,7 @@
 {
   "novel_title": "Of Old Man",
-  "total_chapters": 49,
-  "last_updated": "2025-11-14 22:15:26 UTC",
+  "total_chapters": 50,
+  "last_updated": "2025-11-15 10:15:09 UTC",
   "gist_id": "9fa4af8eb29c0097cc525f2d38503c2e",
   "completed": false,
   "chapters": [
@@ -445,6 +445,15 @@
       "chapter_name": "The Lingering Trace",
       "published_date": "2025-11-14 22:15:25 UTC",
       "poetry_type": "Octave"
+    },
+    {
+      "chapter": 50,
+      "filename": "poem_050.md",
+      "url": "https://gist.githubusercontent.com/pappater/9fa4af8eb29c0097cc525f2d38503c2e/raw/98a3f8cb02a1b1af6fd4f5a1106ec43bc7d44f35/poem_050.md",
+      "gist_url": "https://gist.github.com/9fa4af8eb29c0097cc525f2d38503c2e#poem_050.md",
+      "chapter_name": "For Eleanor, Who Loved the Green",
+      "published_date": "2025-11-15 10:15:08 UTC",
+      "poetry_type": "Epitaph"
     }
   ]
 }
