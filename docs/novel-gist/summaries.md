@@ -169,3 +169,13 @@ Returning from Verkhnyaya, Dmitri and Katya are profoundly shaken by the Lebedev
 Seeking counsel, Dmitri relays these struggles to Father Innokenty. The priest affirms Katya's wisdom, explaining that true justice is about restoration and healing, not just punitive measures. He reveals that Krasny's confession and the returned land are not merely for the Volkovs' benefit, but a "conduit"—a resource by which they can administer Krasny's unfulfilled penance to all those he wronged, extending mercy and healing beyond their family.
 
 This revelation transforms their inherited burden into a vast, complex mission. The land, once a symbol of their survival, becomes a sacred trust to identify and provide tangible restoration for all victims of Krasny's machinations, often requiring humility, patient listening, and fostering dignity rather than mere monetary compensation. Dmitri and Katya, now united in purpose and resolute despite the enormity of the task, begin reviewing ledgers, facing a future dedicated to weaving a new fabric of justice and mercy.
+
+## Chapter 17
+
+Dmitri Ivanovich remains burdened by his inherited guilt and intellectual paralysis, struggling with Father Innokenty's concept of the land as a "conduit for mercy." He feels inadequate for such a profound task, lost in philosophical debates about atonement.
+
+His sister, Katya, demonstrates significant growth, shedding her innocence for a resilient, pragmatic resolve. Unburdened by abstract guilt, she challenges Dmitri's inaction, arguing that debating Krasny’s soul is secondary to alleviating immediate suffering, echoing Anna Sergeyevna's lessons. Her clear-sightedness and practical mind become Dmitri’s essential guide.
+
+Together, they meticulously sift through the ledgers. They uncover the case of Ivan Andreyevich Kuznetsov, a skilled woodworker ruined by Dmitri's father's reckless timber scheme and subsequently stripped of his workshop by Krasny's calculated exploitation. Katya highlights Krasny's predatory nature, contrasting it sharply with their father's opportunism. They realize the Kuznetsovs lost not just property, but their livelihood, craft, and dignity.
+
+They decide to seek out Stepan Ivanovich, Kuznetsov's son, in the artisan quarter. Katya proposes practical solutions like new tools, a workshop, or timber, but emphasizes the need to restore trust and dignity above mere material compensation. Dmitri, though still weary, accepts this deeper responsibility. The chapter concludes with Dmitri finding a nascent resolve, recognizing the arduous path ahead but no longer walking it alone, ready to confront this new knot in their mission of atonement.
